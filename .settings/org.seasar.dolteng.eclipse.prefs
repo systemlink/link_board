@@ -1,0 +1,9 @@
+#Fri May 15 21:46:59 KST 2015
+DaoType=S2JDBC
+DefaultResourcePath=/link_board/src/main/resources
+DefaultRootPackage=jp.sys_link
+DefaultSrcPath=/link_board/src/main/java
+ServletPath=/link_board
+ViewType=SA-Struts
+WebContentsRoot=src/main/webapp/
+eclipse.preferences.version=1
