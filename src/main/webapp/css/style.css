@@ -1,28 +1,35 @@
 @CHARSET "UTF-8";
 
-h3{
+h3 {
 	color: #428bca;
 }
-hr{
+
+hr {
 	background-color: #428bca;
 }
-thead{
+
+thead {
 	background-color: #428bca;
 	color: #ffffff;
 }
 
-td.bg-primary{
+table {
+	border-color: #808080;
+}
+
+td.bg-primary {
 	background-color: #428bca;
 	color: #ffffff;
 }
-div.mid_title{
+
+div.mid_title {
 	color: #428bca;
 }
+
 .container {
-
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  width: 960px;
-  }
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	width: 960px;
+}
 }
