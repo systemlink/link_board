@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+.container {
+	width: 80%;
+}
+
+header {
+	color: #2e82c1;
+}
+
+thead {
+	background-color: #428bca;
+	color: #fff;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid #dddddd;
+	line-height: 1.7;
+}
+
+.bg-primary {
+	background-color: #428bca;
+	color: #fff;
+}
+
+.mid_title {
+	color: #2e82c1;
+}
