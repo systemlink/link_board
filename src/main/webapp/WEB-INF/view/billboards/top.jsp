@@ -8,6 +8,9 @@
 </head>
 
 <body>
+
+	<html:errors />
+
 	<div class="container">
 		<header>
 			<h3 align="center">掲示板</h3>
@@ -38,16 +41,18 @@
 				<td></td>
 				<td></td>
 			</thead>
-			<c:forEach var="e" varStatus="s" items="${billbordsItems}">
+			<c:forEach var="e" varStatus="s" items="${billboardsItems}">
 				<tr>
-					<td>${f:h(e.created_at)}</td>
-					<td>${f:h(e.billboard_group_id)}</td>
+					<td>${f:h(e.createdAt)}</td>
+					<td>${f:h(e.billboardGroupId)}</td>
 					<td>${f:h(e.title)}</td>
-					<td>${f:h(e.user_id)}</td>
+					<td>${f:h(e.userId)}</td>
 					<td align="center"><s:link href="show/${e.id}">
 							<button type="submit">詳細</button>
 						</s:link></td>
-					<td align="center"><button type="submit">編集</button></td>
+					<td align="center"><s:link href="edit/${e.id}">
+							<button type="submit">編集</button>
+						</s:link></td>
 				<tr>
 			</c:forEach>
 		</table>

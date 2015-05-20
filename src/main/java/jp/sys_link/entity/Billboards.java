@@ -1,14 +1,13 @@
 package jp.sys_link.entity;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Version;
-
-import java.sql.Timestamp;
 
 
 @Entity
@@ -18,8 +17,10 @@ public class Billboards {
     @GeneratedValue
     public Integer id;
 
+    @Column
     public String title;
 
+    @Column
     public String note;
 
     @Column(name="billboard_group_id")
@@ -32,8 +33,5 @@ public class Billboards {
     @Column(name="created_at")
     public Timestamp createdAt;
 
-    @Temporal(TemporalType.DATE)
-    @Column(name="updated_at")
-    public Timestamp updatedAt;
 
 }

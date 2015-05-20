@@ -4,7 +4,7 @@
 <head>
 <title>詳細画面</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="../../../css/style.css">
+<link rel="stylesheet" type="text/css" href="${f:url('/css/style.css')}" />
 </head>
 
 <body>
