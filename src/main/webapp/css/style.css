@@ -8,13 +8,14 @@ hr {
 	background-color: #428bca;
 }
 
-thead {
+th {
 	background-color: #428bca;
 	color: #ffffff;
 }
 
 table {
-	border-color: #808080;
+	border-color: #c0c0c0;
+	border-collapse: collapse;
 }
 
 td.bg-primary {
