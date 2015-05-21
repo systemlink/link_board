@@ -1,6 +1,3 @@
-/app.dicon
-/application.properties
-/application_ja.properties
 /convention.dicon
 /creator.dicon
 /customizer.dicon
@@ -12,3 +9,6 @@
 /log4j.properties
 /s2container.dicon
 /s2jdbc.dicon
+/app.dicon
+/application.properties
+/application_ja.properties

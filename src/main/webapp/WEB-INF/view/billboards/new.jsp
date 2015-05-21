@@ -40,7 +40,7 @@
 					<td class="bg-primary">分類</td>
 					<td><html:select property="billboardGroupId"
 							style="width: 100%">
-							<option value=""></option>
+							<option></option>
 							<option value="1">通達／連絡</option>
 							<option value="2">会議開催について</option>
 							<option value="3">スケジュール</option>
@@ -53,10 +53,8 @@
 			<hr>
 
 			<div align="center">
-				<s:link href="insert">
-					<button type="submit">登録</button>
-				</s:link>
-				<button type="submit">キャンセル</button>
+				<input type="submit" name="insert" value="登録" />
+				<s:link href="/billboards/"><button type="submit">キャンセル</button></s:link>
 			</div>
 		</s:form>
 	</div>

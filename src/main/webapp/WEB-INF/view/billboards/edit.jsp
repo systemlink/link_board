@@ -8,6 +8,9 @@
 </head>
 
 <body>
+
+	<html:errors />
+
 	<div class="container">
 		<header>
 			<h3 align="center">掲示板編集</h3>
@@ -16,6 +19,8 @@
 		<br>
 
 		<s:form>
+			<html:hidden property="id" />
+			<html:hidden property="userId" />
 			<table border=1>
 				<colgroup>
 					<col width="300px">
@@ -51,9 +56,11 @@
 			<hr>
 
 			<div align="center">
-				<button type="submit">登録</button>
-				<button type="submit">削除</button>
-				<button type="submit">キャンセル</button>
+				<input type="submit" name="update" value="登録" />
+				<input type="submit" name="delete" value="削除" />
+				<s:link href="/billboards/">
+					<button type="submit">キャンセル</button>
+				</s:link>
 			</div>
 		</s:form>
 	</div>

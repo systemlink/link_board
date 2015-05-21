@@ -29,17 +29,20 @@ public class BillboardsAction {
 
 	@Execute(validator = false)
 	public String index() {
-		billboardsItems = billboardsService.findAll();
+		billboardsItems = jdbcManager.from(Billboards.class).innerJoin("user").getResultList();
 		return "top.jsp";
 	}
 
 	@Execute(validator = false)
-	public String cleate() {
+	public String create() {
 		return "new.jsp";
 	}
 
 	@Execute(validator = false, urlPattern = "show/{id}")
 	public String show() {
+		Billboards entity = billboardsService.findById(Integer
+				.valueOf(billboardsForm.id));
+		Beans.copy(entity, billboardsForm).execute();
 		return "show.jsp";
 	}
 
@@ -56,8 +59,27 @@ public class BillboardsAction {
 		Billboards entity = Beans
 				.createAndCopy(Billboards.class, billboardsForm)
 				.dateConverter("yyyy-MM-dd").execute();
+		entity.userId = 2;
 		billboardsService.insert(entity);
-		return "/billbords/";
+		return "/billboards/";
+	}
+
+	@Execute(input = "edit.jsp", redirect = true)
+	public String update() {
+		Billboards entity = Beans
+				.createAndCopy(Billboards.class, billboardsForm)
+				.dateConverter("yyyy-MM-dd").execute();
+		billboardsService.update(entity);
+		return "/billboards/";
+	}
+
+	@Execute(input = "edit.jsp", redirect = true)
+	public String delete() {
+		Billboards entity = Beans
+				.createAndCopy(Billboards.class, billboardsForm)
+				.dateConverter("yyyy-MM-dd").execute();
+		billboardsService.delete(entity);
+		return "/billboards/";
 	}
 
 }

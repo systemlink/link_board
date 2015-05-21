@@ -15,19 +15,32 @@
 		</header>
 
 		<div align="right">
-			<button type="submit">戻る</button>
+			<s:link href="/billboards/">
+				<button type="submit">戻る</button>
+			</s:link>
 		</div>
 
 		<div class="mid_title">タイトル</div>
-		<div class="mid_title">内容</div>
-		<div class="mid_title">分類</div>
-		<div class="mid_title">作成者</div>
+		<div>${f:h(title)}</div>
 
+		<div class="mid_title">内容</div>
+		<div>${f:br(f:h(note))}</div>
+
+		<div class="mid_title">分類</div>
+		<div>${f:h(billboardGroupId)}</div>
+
+		<div class="mid_title">作成者</div>
+		<div>${f:h(userId)}</div>
 		<hr>
 
 		<div align="center">
-			<button type="submit">編集</button>
-			<button type="submit">戻る</button>
+			<s:link href="edit/${id}">
+				<button type="submit">編集</button>
+			</s:link>
+
+			<s:link href="/billboards/">
+				<button type="submit">戻る</button>
+			</s:link>
 		</div>
 	</div>
 </body>

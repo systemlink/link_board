@@ -100,6 +100,7 @@ static {
       out.write("</head>\r\n");
       out.write("\r\n");
       out.write("<body>\r\n");
+      out.write("\r\n");
       out.write("\t");
       if (_jspx_meth_html_005ferrors_005f0(_jspx_page_context))
         return;
@@ -197,11 +198,11 @@ static {
         out.write("\t\t\t<hr>\r\n");
         out.write("\r\n");
         out.write("\t\t\t<div align=\"center\">\r\n");
+        out.write("\t\t\t\t<input type=\"submit\" name=\"insert\" value=\"登録\" />\r\n");
         out.write("\t\t\t\t");
         if (_jspx_meth_s_005flink_005f0(_jspx_th_s_005fform_005f0, _jspx_page_context))
           return true;
         out.write("\r\n");
-        out.write("\t\t\t\t<button type=\"submit\">キャンセル</button>\r\n");
         out.write("\t\t\t</div>\r\n");
         out.write("\t\t");
         int evalDoAfterBody = _jspx_th_s_005fform_005f0.doAfterBody();
@@ -225,9 +226,9 @@ static {
     org.apache.struts.taglib.html.TextTag _jspx_th_html_005ftext_005f0 = (org.apache.struts.taglib.html.TextTag) _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fstyle_005fproperty_005fnobody.get(org.apache.struts.taglib.html.TextTag.class);
     _jspx_th_html_005ftext_005f0.setPageContext(_jspx_page_context);
     _jspx_th_html_005ftext_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /WEB-INF/view/billboards/new.jsp(30,9) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboards/new.jsp(31,9) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setProperty("title");
-    // /WEB-INF/view/billboards/new.jsp(30,9) name = style type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboards/new.jsp(31,9) name = style type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setStyle("width: 100%");
     int _jspx_eval_html_005ftext_005f0 = _jspx_th_html_005ftext_005f0.doStartTag();
     if (_jspx_th_html_005ftext_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -246,11 +247,11 @@ static {
     org.apache.struts.taglib.html.TextareaTag _jspx_th_html_005ftextarea_005f0 = (org.apache.struts.taglib.html.TextareaTag) _005fjspx_005ftagPool_005fhtml_005ftextarea_0026_005frows_005fproperty_005fcols_005fnobody.get(org.apache.struts.taglib.html.TextareaTag.class);
     _jspx_th_html_005ftextarea_005f0.setPageContext(_jspx_page_context);
     _jspx_th_html_005ftextarea_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /WEB-INF/view/billboards/new.jsp(35,9) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboards/new.jsp(36,9) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftextarea_005f0.setProperty("note");
-    // /WEB-INF/view/billboards/new.jsp(35,9) name = cols type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboards/new.jsp(36,9) name = cols type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftextarea_005f0.setCols("100");
-    // /WEB-INF/view/billboards/new.jsp(35,9) name = rows type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboards/new.jsp(36,9) name = rows type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftextarea_005f0.setRows("30");
     int _jspx_eval_html_005ftextarea_005f0 = _jspx_th_html_005ftextarea_005f0.doStartTag();
     if (_jspx_th_html_005ftextarea_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -282,7 +283,7 @@ static {
       }
       do {
         out.write("\r\n");
-        out.write("\t\t\t\t\t\t\t<option value=\"\"></option>\r\n");
+        out.write("\t\t\t\t\t\t\t<option></option>\r\n");
         out.write("\t\t\t\t\t\t\t<option value=\"1\">通達／連絡</option>\r\n");
         out.write("\t\t\t\t\t\t\t<option value=\"2\">会議開催について</option>\r\n");
         out.write("\t\t\t\t\t\t\t<option value=\"3\">スケジュール</option>\r\n");
@@ -313,8 +314,8 @@ static {
     org.seasar.struts.taglib.S2LinkTag _jspx_th_s_005flink_005f0 = (org.seasar.struts.taglib.S2LinkTag) _005fjspx_005ftagPool_005fs_005flink_0026_005fhref.get(org.seasar.struts.taglib.S2LinkTag.class);
     _jspx_th_s_005flink_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005flink_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /WEB-INF/view/billboards/new.jsp(56,4) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005flink_005f0.setHref("insert");
+    // /WEB-INF/view/billboards/new.jsp(57,4) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005flink_005f0.setHref("/billboards/");
     int _jspx_eval_s_005flink_005f0 = _jspx_th_s_005flink_005f0.doStartTag();
     if (_jspx_eval_s_005flink_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       if (_jspx_eval_s_005flink_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
@@ -323,9 +324,7 @@ static {
         _jspx_th_s_005flink_005f0.doInitBody();
       }
       do {
-        out.write("\r\n");
-        out.write("\t\t\t\t\t<button type=\"submit\">登録</button>\r\n");
-        out.write("\t\t\t\t");
+        out.write("<button type=\"submit\">キャンセル</button>");
         int evalDoAfterBody = _jspx_th_s_005flink_005f0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;

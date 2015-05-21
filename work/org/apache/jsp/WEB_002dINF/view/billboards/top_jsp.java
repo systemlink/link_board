@@ -177,7 +177,7 @@ static {
     _jspx_th_s_005flink_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005flink_005f0.setParent(null);
     // /WEB-INF/view/billboards/top.jsp(22,3) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005flink_005f0.setHref("cleate");
+    _jspx_th_s_005flink_005f0.setHref("create");
     int _jspx_eval_s_005flink_005f0 = _jspx_th_s_005flink_005f0.doStartTag();
     if (_jspx_eval_s_005flink_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       if (_jspx_eval_s_005flink_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
@@ -236,7 +236,7 @@ static {
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.title)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
           out.write("</td>\r\n");
           out.write("\t\t\t\t\t<td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.userId)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.user.name)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
           out.write("</td>\r\n");
           out.write("\t\t\t\t\t<td align=\"center\">");
           if (_jspx_meth_s_005flink_005f1(_jspx_th_c_005fforEach_005f0, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f0))

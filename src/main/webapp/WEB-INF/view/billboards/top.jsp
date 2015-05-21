@@ -19,7 +19,7 @@
 
 		<div align="right">
 			<button type="submit">戻る</button>
-			<s:link href="cleate">
+			<s:link href="create">
 				<button type="submit">新規作成</button>
 			</s:link>
 		</div>
@@ -46,7 +46,7 @@
 					<td>${f:h(e.createdAt)}</td>
 					<td>${f:h(e.billboardGroupId)}</td>
 					<td>${f:h(e.title)}</td>
-					<td>${f:h(e.userId)}</td>
+					<td>${f:h(e.user.name)}</td>
 					<td align="center"><s:link href="show/${e.id}">
 							<button type="submit">詳細</button>
 						</s:link></td>
