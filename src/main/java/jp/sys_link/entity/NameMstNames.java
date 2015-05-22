@@ -1,15 +1,16 @@
 package jp.sys_link.entity;
 
+import java.sql.Timestamp;
 import javax.annotation.Generated;
 import jp.sys_link.entity.BillboardsNames._BillboardsNames;
 import org.seasar.extension.jdbc.name.PropertyName;
 
 /**
- * {@link User}のプロパティ名の集合です。
+ * {@link NameMst}のプロパティ名の集合です。
  * 
  */
 @Generated(value = {"S2JDBC-Gen 2.4.45", "org.seasar.extension.jdbc.gen.internal.model.NamesModelFactoryImpl"}, date = "2015/05/22 16:52:25")
-public class UserNames {
+public class NameMstNames {
 
     /**
      * idのプロパティ名を返します。
@@ -21,12 +22,30 @@ public class UserNames {
     }
 
     /**
-     * userNoのプロパティ名を返します。
+     * codeIdのプロパティ名を返します。
      * 
-     * @return userNoのプロパティ名
+     * @return codeIdのプロパティ名
      */
-    public static PropertyName<String> userNo() {
-        return new PropertyName<String>("userNo");
+    public static PropertyName<String> codeId() {
+        return new PropertyName<String>("codeId");
+    }
+
+    /**
+     * codeIdNameのプロパティ名を返します。
+     * 
+     * @return codeIdNameのプロパティ名
+     */
+    public static PropertyName<String> codeIdName() {
+        return new PropertyName<String>("codeIdName");
+    }
+
+    /**
+     * codeのプロパティ名を返します。
+     * 
+     * @return codeのプロパティ名
+     */
+    public static PropertyName<String> code() {
+        return new PropertyName<String>("code");
     }
 
     /**
@@ -36,6 +55,15 @@ public class UserNames {
      */
     public static PropertyName<String> name() {
         return new PropertyName<String>("name");
+    }
+
+    /**
+     * createdAtのプロパティ名を返します。
+     * 
+     * @return createdAtのプロパティ名
+     */
+    public static PropertyName<Timestamp> createdAt() {
+        return new PropertyName<Timestamp>("createdAt");
     }
 
     /**
@@ -50,12 +78,12 @@ public class UserNames {
     /**
      * @author S2JDBC-Gen
      */
-    public static class _UserNames extends PropertyName<User> {
+    public static class _NameMstNames extends PropertyName<NameMst> {
 
         /**
          * インスタンスを構築します。
          */
-        public _UserNames() {
+        public _NameMstNames() {
         }
 
         /**
@@ -64,7 +92,7 @@ public class UserNames {
          * @param name
          *            名前
          */
-        public _UserNames(final String name) {
+        public _NameMstNames(final String name) {
             super(name);
         }
 
@@ -76,7 +104,7 @@ public class UserNames {
          * @param name
          *            名前
          */
-        public _UserNames(final PropertyName<?> parent, final String name) {
+        public _NameMstNames(final PropertyName<?> parent, final String name) {
             super(parent, name);
         }
 
@@ -90,12 +118,30 @@ public class UserNames {
         }
 
         /**
-         * userNoのプロパティ名を返します。
+         * codeIdのプロパティ名を返します。
          *
-         * @return userNoのプロパティ名
+         * @return codeIdのプロパティ名
          */
-        public PropertyName<String> userNo() {
-            return new PropertyName<String>(this, "userNo");
+        public PropertyName<String> codeId() {
+            return new PropertyName<String>(this, "codeId");
+        }
+
+        /**
+         * codeIdNameのプロパティ名を返します。
+         *
+         * @return codeIdNameのプロパティ名
+         */
+        public PropertyName<String> codeIdName() {
+            return new PropertyName<String>(this, "codeIdName");
+        }
+
+        /**
+         * codeのプロパティ名を返します。
+         *
+         * @return codeのプロパティ名
+         */
+        public PropertyName<String> code() {
+            return new PropertyName<String>(this, "code");
         }
 
         /**
@@ -105,6 +151,15 @@ public class UserNames {
          */
         public PropertyName<String> name() {
             return new PropertyName<String>(this, "name");
+        }
+
+        /**
+         * createdAtのプロパティ名を返します。
+         *
+         * @return createdAtのプロパティ名
+         */
+        public PropertyName<Timestamp> createdAt() {
+            return new PropertyName<Timestamp>(this, "createdAt");
         }
 
         /**

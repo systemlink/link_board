@@ -44,11 +44,9 @@
 					<td><html:select property="billboardGroupId"
 							style="width: 100%">
 							<option value=""></option>
-							<option value="1">通達／連絡</option>
-							<option value="2">会議開催について</option>
-							<option value="3">スケジュール</option>
-							<option value="4">イベント</option>
-							<option value="9">その他</option>
+							<c:forEach var="e" varStatus="s" items="${nameMstItems}">
+								<option value="${e.id}">${e.name}</option>
+							</c:forEach>
 						</html:select></td>
 				</tr>
 			</table>
@@ -56,8 +54,8 @@
 			<hr>
 
 			<div align="center">
-				<input type="submit" name="update" value="登録" />
-				<input type="submit" name="delete" value="削除" />
+				<input type="submit" name="update" value="登録" /> <input
+					type="submit" name="delete" value="削除" />
 				<s:link href="/billboards/">
 					<button type="submit">キャンセル</button>
 				</s:link>

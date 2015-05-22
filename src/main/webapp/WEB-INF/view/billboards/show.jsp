@@ -21,16 +21,16 @@
 		</div>
 
 		<div class="mid_title">タイトル</div>
-		<div>${f:h(title)}</div>
+		<div>${f:h(billboardsItems[0].title)}</div>
 
 		<div class="mid_title">内容</div>
-		<div>${f:br(f:h(note))}</div>
+		<div>${f:br(f:h(billboardsItems[0].note))}</div>
 
 		<div class="mid_title">分類</div>
-		<div>${f:h(billboardGroupId)}</div>
+		<div>${f:h(billboardsItems[0].nameMst.name)}</div>
 
 		<div class="mid_title">作成者</div>
-		<div>${f:h(userId)}</div>
+		<div>${f:h(billboardsItems[0].user.name)}</div>
 		<hr>
 
 		<div align="center">

@@ -18,4 +18,6 @@ public class BillboardsForm {
 	public String userId = "";
 
 	public String createdAt = "";
+
+	public String name = "";
 }

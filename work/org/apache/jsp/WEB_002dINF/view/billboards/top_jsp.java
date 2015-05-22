@@ -102,7 +102,7 @@ static {
       out.write("\t<div class=\"container\">\r\n");
       out.write("\t\t<header>\r\n");
       out.write("\t\t\t<h3 align=\"center\">掲示板</h3>\r\n");
-      out.write("\t\t\t<hr size=4>\r\n");
+      out.write("\t\t\t<hr size=4/>\r\n");
       out.write("\t\t</header>\r\n");
       out.write("\r\n");
       out.write("\t\t<div align=\"right\">\r\n");
@@ -115,12 +115,12 @@ static {
       out.write("\r\n");
       out.write("\t\t<table border=1>\r\n");
       out.write("\t\t\t<colgroup>\r\n");
-      out.write("\t\t\t\t<col width=\"130px\">\r\n");
-      out.write("\t\t\t\t<col width=\"130px\">\r\n");
-      out.write("\t\t\t\t<col width=\"450px\">\r\n");
-      out.write("\t\t\t\t<col width=\"130px\">\r\n");
-      out.write("\t\t\t\t<col width=\"70px\">\r\n");
-      out.write("\t\t\t\t<col width=\"70px\">\r\n");
+      out.write("\t\t\t\t<col width=\"130px\"/>\r\n");
+      out.write("\t\t\t\t<col width=\"130px\"/>\r\n");
+      out.write("\t\t\t\t<col width=\"450px\"/>\r\n");
+      out.write("\t\t\t\t<col width=\"130px\"/>\r\n");
+      out.write("\t\t\t\t<col width=\"70px\"/>\r\n");
+      out.write("\t\t\t\t<col width=\"70px\"/>\r\n");
       out.write("\t\t\t</colgroup>\r\n");
       out.write("\t\t\t<thead>\r\n");
       out.write("\t\t\t\t<td>作成日</td>\r\n");
@@ -230,7 +230,7 @@ static {
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.createdAt)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
           out.write("</td>\r\n");
           out.write("\t\t\t\t\t<td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.billboardGroupId)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.nameMst.name)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
           out.write("</td>\r\n");
           out.write("\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.title)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));

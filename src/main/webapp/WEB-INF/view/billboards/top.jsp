@@ -14,7 +14,7 @@
 	<div class="container">
 		<header>
 			<h3 align="center">掲示板</h3>
-			<hr size=4>
+			<hr size=4/>
 		</header>
 
 		<div align="right">
@@ -26,12 +26,12 @@
 
 		<table border=1>
 			<colgroup>
-				<col width="130px">
-				<col width="130px">
-				<col width="450px">
-				<col width="130px">
-				<col width="70px">
-				<col width="70px">
+				<col width="130px"/>
+				<col width="130px"/>
+				<col width="450px"/>
+				<col width="130px"/>
+				<col width="70px"/>
+				<col width="70px"/>
 			</colgroup>
 			<thead>
 				<td>作成日</td>
@@ -44,7 +44,7 @@
 			<c:forEach var="e" varStatus="s" items="${billboardsItems}">
 				<tr>
 					<td>${f:h(e.createdAt)}</td>
-					<td>${f:h(e.billboardGroupId)}</td>
+					<td>${f:h(e.nameMst.name)}</td>
 					<td>${f:h(e.title)}</td>
 					<td>${f:h(e.user.name)}</td>
 					<td align="center"><s:link href="show/${e.id}">

@@ -37,4 +37,8 @@ public class Billboards {
 	@ManyToOne
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	public User user;
+
+	@ManyToOne
+	@JoinColumn(name = "billboard_group_id", referencedColumnName = "id")
+	public NameMst nameMst;
 }

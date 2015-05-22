@@ -2,6 +2,7 @@ package jp.sys_link.entity;
 
 import java.sql.Timestamp;
 import javax.annotation.Generated;
+import jp.sys_link.entity.NameMstNames._NameMstNames;
 import jp.sys_link.entity.UserNames._UserNames;
 import org.seasar.extension.jdbc.name.PropertyName;
 
@@ -9,7 +10,7 @@ import org.seasar.extension.jdbc.name.PropertyName;
  * {@link Billboards}のプロパティ名の集合です。
  * 
  */
-@Generated(value = {"S2JDBC-Gen 2.4.45", "org.seasar.extension.jdbc.gen.internal.model.NamesModelFactoryImpl"}, date = "2015/05/21 16:34:20")
+@Generated(value = {"S2JDBC-Gen 2.4.45", "org.seasar.extension.jdbc.gen.internal.model.NamesModelFactoryImpl"}, date = "2015/05/22 16:52:25")
 public class BillboardsNames {
 
     /**
@@ -73,6 +74,15 @@ public class BillboardsNames {
      */
     public static _UserNames user() {
         return new _UserNames("user");
+    }
+
+    /**
+     * nameMstのプロパティ名を返します。
+     * 
+     * @return nameMstのプロパティ名
+     */
+    public static _NameMstNames nameMst() {
+        return new _NameMstNames("nameMst");
     }
 
     /**
@@ -169,6 +179,15 @@ public class BillboardsNames {
          */
         public _UserNames user() {
             return new _UserNames(this, "user");
+        }
+
+        /**
+         * nameMstのプロパティ名を返します。
+         * 
+         * @return nameMstのプロパティ名
+         */
+        public _NameMstNames nameMst() {
+            return new _NameMstNames(this, "nameMst");
         }
     }
 }

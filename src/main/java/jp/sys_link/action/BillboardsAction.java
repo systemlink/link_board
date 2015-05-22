@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import jp.sys_link.entity.Billboards;
+import jp.sys_link.entity.NameMst;
 import jp.sys_link.form.BillboardsForm;
 import jp.sys_link.service.BillboardsService;
 
@@ -16,6 +17,7 @@ import org.seasar.struts.annotation.Execute;
 public class BillboardsAction {
 
 	public List<Billboards> billboardsItems;
+	public List<NameMst> nameMstItems;
 
 	@ActionForm
 	@Resource
@@ -29,7 +31,8 @@ public class BillboardsAction {
 
 	@Execute(validator = false)
 	public String index() {
-		billboardsItems = jdbcManager.from(Billboards.class).innerJoin("user").getResultList();
+		billboardsItems = jdbcManager.from(Billboards.class).innerJoin("user")
+				.innerJoin("nameMst").getResultList();
 		return "top.jsp";
 	}
 
@@ -40,14 +43,15 @@ public class BillboardsAction {
 
 	@Execute(validator = false, urlPattern = "show/{id}")
 	public String show() {
-		Billboards entity = billboardsService.findById(Integer
-				.valueOf(billboardsForm.id));
-		Beans.copy(entity, billboardsForm).execute();
+		billboardsItems = jdbcManager.from(Billboards.class).innerJoin("user")
+				.innerJoin("nameMst").where("id = ?", billboardsForm.id)
+				.getResultList();
 		return "show.jsp";
 	}
 
 	@Execute(validator = false, urlPattern = "edit/{id}")
 	public String edit() {
+		nameMstItems = jdbcManager.from(NameMst.class).getResultList();
 		Billboards entity = billboardsService.findById(Integer
 				.valueOf(billboardsForm.id));
 		Beans.copy(entity, billboardsForm).execute();
