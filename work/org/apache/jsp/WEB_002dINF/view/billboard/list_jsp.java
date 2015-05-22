@@ -152,8 +152,8 @@ static {
         out.write("\t\t\t<h3 align=\"center\">掲示板</h3>\r\n");
         out.write("\t\t\t<hr size=\"4\" />\r\n");
         out.write("\t\t\t<div align=\"right\">\r\n");
-        out.write("\t\t\t\t<input type=\"submit\" name=\"list\" value=\"戻る\" /> <input type=\"submit\"\r\n");
-        out.write("\t\t\t\t\tname=\"create\" value=\"新規作成\" />\r\n");
+        out.write("\t\t\t\t<input type=\"submit\" name=\"index\" value=\"戻る\" /> <input\r\n");
+        out.write("\t\t\t\t\ttype=\"submit\" name=\"create\" value=\"新規作成\" />\r\n");
         out.write("\t\t\t</div>\r\n");
         out.write("\t\t\t<table border=\"1\" cellspacing=\"0\" cellpadding=\"5\">\r\n");
         out.write("\t\t\t\t<colgroup>\r\n");
@@ -219,7 +219,7 @@ static {
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.createdAt)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
           out.write("</td>\r\n");
           out.write("\t\t\t\t\t\t<td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.billboardGroupId)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.nameMst.name)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
           out.write("</td>\r\n");
           out.write("\t\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.title)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
@@ -227,14 +227,18 @@ static {
           out.write("\t\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.user.name)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
           out.write("</td>\r\n");
-          out.write("\t\t\t\t\t\t<td><button>");
+          out.write("\t\t\t\t\t\t<td><button>\r\n");
+          out.write("\t\t\t\t\t\t\t\t");
           if (_jspx_meth_s_005flink_005f0(_jspx_th_c_005fforEach_005f0, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f0))
             return true;
-          out.write("</button></td>\r\n");
-          out.write("\t\t\t\t\t\t<td><button>");
+          out.write("\r\n");
+          out.write("\t\t\t\t\t\t\t</button></td>\r\n");
+          out.write("\t\t\t\t\t\t<td><button>\r\n");
+          out.write("\t\t\t\t\t\t\t\t");
           if (_jspx_meth_s_005flink_005f1(_jspx_th_c_005fforEach_005f0, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f0))
             return true;
-          out.write("</button></td>\r\n");
+          out.write("\r\n");
+          out.write("\t\t\t\t\t\t\t</button></td>\r\n");
           out.write("\t\t\t\t\t</tr>\r\n");
           out.write("\t\t\t\t");
           int evalDoAfterBody = _jspx_th_c_005fforEach_005f0.doAfterBody();
@@ -264,7 +268,7 @@ static {
     org.seasar.struts.taglib.S2LinkTag _jspx_th_s_005flink_005f0 = (org.seasar.struts.taglib.S2LinkTag) _005fjspx_005ftagPool_005fs_005flink_0026_005fhref.get(org.seasar.struts.taglib.S2LinkTag.class);
     _jspx_th_s_005flink_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005flink_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/view/billboard/list.jsp(41,18) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboard/list.jsp(42,8) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005flink_005f0.setHref((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("show/${e.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_s_005flink_005f0 = _jspx_th_s_005flink_005f0.doStartTag();
     if (_jspx_eval_s_005flink_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -301,7 +305,7 @@ static {
     org.seasar.struts.taglib.S2LinkTag _jspx_th_s_005flink_005f1 = (org.seasar.struts.taglib.S2LinkTag) _005fjspx_005ftagPool_005fs_005flink_0026_005fhref.get(org.seasar.struts.taglib.S2LinkTag.class);
     _jspx_th_s_005flink_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005flink_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/view/billboard/list.jsp(42,18) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboard/list.jsp(45,8) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005flink_005f1.setHref((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("edit/${e.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_s_005flink_005f1 = _jspx_th_s_005flink_005f1.doStartTag();
     if (_jspx_eval_s_005flink_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
