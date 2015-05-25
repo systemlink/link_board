@@ -6,10 +6,10 @@ public class BillboardsForm {
 
 	public String id = "";
 
-	@Required
+	@Required(target = "insert,update")
 	public String title = "";
 
-	@Required
+	@Required(target = "insert,update")
 	public String note = "";
 
 	@Required(target = "insert,update")
@@ -18,6 +18,4 @@ public class BillboardsForm {
 	public String userId = "";
 
 	public String createdAt = "";
-
-	public String name = "";
 }

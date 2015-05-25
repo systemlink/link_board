@@ -89,7 +89,7 @@ static {
       out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:url('/css/style.css')}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
       out.write("\" />\r\n");
-      out.write("<title>トップ画面</title>\r\n");
+      out.write("<title>TOP画面</title>\r\n");
       out.write("</head>\r\n");
       out.write("\r\n");
       out.write("<body>\r\n");
@@ -102,7 +102,7 @@ static {
       out.write("\t<div class=\"container\">\r\n");
       out.write("\t\t<header>\r\n");
       out.write("\t\t\t<h3 align=\"center\">掲示板</h3>\r\n");
-      out.write("\t\t\t<hr size=4/>\r\n");
+      out.write("\t\t\t<hr size=4 />\r\n");
       out.write("\t\t</header>\r\n");
       out.write("\r\n");
       out.write("\t\t<div align=\"right\">\r\n");
@@ -115,12 +115,12 @@ static {
       out.write("\r\n");
       out.write("\t\t<table border=1>\r\n");
       out.write("\t\t\t<colgroup>\r\n");
-      out.write("\t\t\t\t<col width=\"130px\"/>\r\n");
-      out.write("\t\t\t\t<col width=\"130px\"/>\r\n");
-      out.write("\t\t\t\t<col width=\"450px\"/>\r\n");
-      out.write("\t\t\t\t<col width=\"130px\"/>\r\n");
-      out.write("\t\t\t\t<col width=\"70px\"/>\r\n");
-      out.write("\t\t\t\t<col width=\"70px\"/>\r\n");
+      out.write("\t\t\t\t<col width=\"130px\" />\r\n");
+      out.write("\t\t\t\t<col width=\"130px\" />\r\n");
+      out.write("\t\t\t\t<col width=\"450px\" />\r\n");
+      out.write("\t\t\t\t<col width=\"130px\" />\r\n");
+      out.write("\t\t\t\t<col width=\"70px\" />\r\n");
+      out.write("\t\t\t\t<col width=\"70px\" />\r\n");
       out.write("\t\t\t</colgroup>\r\n");
       out.write("\t\t\t<thead>\r\n");
       out.write("\t\t\t\t<td>作成日</td>\r\n");
@@ -225,7 +225,10 @@ static {
       if (_jspx_eval_c_005fforEach_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("\t\t\t\t<tr>\r\n");
+          out.write("\r\n");
+          out.write("\t<tr style=\"background-color:");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${s.index %2 == 0 ? '#f9f9f9' : 'white'}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("\">\r\n");
           out.write("\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.createdAt)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
           out.write("</td>\r\n");
@@ -275,7 +278,7 @@ static {
     org.seasar.struts.taglib.S2LinkTag _jspx_th_s_005flink_005f1 = (org.seasar.struts.taglib.S2LinkTag) _005fjspx_005ftagPool_005fs_005flink_0026_005fhref.get(org.seasar.struts.taglib.S2LinkTag.class);
     _jspx_th_s_005flink_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005flink_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/view/billboards/top.jsp(50,24) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboards/top.jsp(51,24) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005flink_005f1.setHref((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("show/${e.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_s_005flink_005f1 = _jspx_th_s_005flink_005f1.doStartTag();
     if (_jspx_eval_s_005flink_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -314,7 +317,7 @@ static {
     org.seasar.struts.taglib.S2LinkTag _jspx_th_s_005flink_005f2 = (org.seasar.struts.taglib.S2LinkTag) _005fjspx_005ftagPool_005fs_005flink_0026_005fhref.get(org.seasar.struts.taglib.S2LinkTag.class);
     _jspx_th_s_005flink_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005flink_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/view/billboards/top.jsp(53,24) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboards/top.jsp(54,24) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005flink_005f2.setHref((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("edit/${e.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_s_005flink_005f2 = _jspx_th_s_005flink_005f2.doStartTag();
     if (_jspx_eval_s_005flink_005f2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {

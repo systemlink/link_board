@@ -42,11 +42,16 @@
 				<tr>
 					<td class="bg-primary">分類</td>
 					<td><html:select property="billboardGroupId"
-							style="width: 100%">
-							<option value=""></option>
+							value="${billboardGroupId}" style="width: 100%">
+							<c:forEach var="e" varStatus="s" items="${nameMstItems}">
+								<html:option value="${e.id}">${e.name}</html:option>
+							</c:forEach>
+							<!--   編集画面で必須項目の未記入エラーを起こすと何も表示されなくなる
 							<c:forEach var="e" varStatus="s" items="${nameMstItems}">
 								<option value="${e.id}">${e.name}</option>
 							</c:forEach>
+
+					-->
 						</html:select></td>
 				</tr>
 			</table>

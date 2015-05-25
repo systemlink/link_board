@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="${f:url('/css/style.css')}" />
-<title>トップ画面</title>
+<title>TOP画面</title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 	<div class="container">
 		<header>
 			<h3 align="center">掲示板</h3>
-			<hr size=4/>
+			<hr size=4 />
 		</header>
 
 		<div align="right">
@@ -26,12 +26,12 @@
 
 		<table border=1>
 			<colgroup>
-				<col width="130px"/>
-				<col width="130px"/>
-				<col width="450px"/>
-				<col width="130px"/>
-				<col width="70px"/>
-				<col width="70px"/>
+				<col width="130px" />
+				<col width="130px" />
+				<col width="450px" />
+				<col width="130px" />
+				<col width="70px" />
+				<col width="70px" />
 			</colgroup>
 			<thead>
 				<td>作成日</td>
@@ -42,7 +42,8 @@
 				<td></td>
 			</thead>
 			<c:forEach var="e" varStatus="s" items="${billboardsItems}">
-				<tr>
+
+	<tr style="background-color:${s.index %2 == 0 ? '#f9f9f9' : 'white'}">
 					<td>${f:h(e.createdAt)}</td>
 					<td>${f:h(e.nameMst.name)}</td>
 					<td>${f:h(e.title)}</td>

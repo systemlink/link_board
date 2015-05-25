@@ -18,6 +18,7 @@ public class BillboardsAction {
 
 	public List<Billboards> billboardsItems;
 	public List<NameMst> nameMstItems;
+	public Billboards billboardItems;
 
 	@ActionForm
 	@Resource
@@ -32,20 +33,21 @@ public class BillboardsAction {
 	@Execute(validator = false)
 	public String index() {
 		billboardsItems = jdbcManager.from(Billboards.class).innerJoin("user")
-				.innerJoin("nameMst").getResultList();
+				.innerJoin("nameMst").orderBy("id").getResultList();
 		return "top.jsp";
 	}
 
 	@Execute(validator = false)
 	public String create() {
+		nameMstItems = jdbcManager.from(NameMst.class).getResultList();
 		return "new.jsp";
 	}
 
 	@Execute(validator = false, urlPattern = "show/{id}")
 	public String show() {
-		billboardsItems = jdbcManager.from(Billboards.class).innerJoin("user")
+		billboardItems = jdbcManager.from(Billboards.class).innerJoin("user")
 				.innerJoin("nameMst").where("id = ?", billboardsForm.id)
-				.getResultList();
+				.getSingleResult();
 		return "show.jsp";
 	}
 
@@ -58,12 +60,12 @@ public class BillboardsAction {
 		return "edit.jsp";
 	}
 
-	@Execute(input = "new.jsp", redirect = true)
+	@Execute(validator = true, input = "create", redirect = true)
 	public String insert() {
 		Billboards entity = Beans
 				.createAndCopy(Billboards.class, billboardsForm)
-				.dateConverter("yyyy-MM-dd").execute();
-		entity.userId = 2;
+				.dateConverter("yyyy/MM/dd").execute();
+		entity.userId = 1;
 		billboardsService.insert(entity);
 		return "/billboards/";
 	}
@@ -72,7 +74,7 @@ public class BillboardsAction {
 	public String update() {
 		Billboards entity = Beans
 				.createAndCopy(Billboards.class, billboardsForm)
-				.dateConverter("yyyy-MM-dd").execute();
+				.dateConverter("yyyy/MM/dd").execute();
 		billboardsService.update(entity);
 		return "/billboards/";
 	}

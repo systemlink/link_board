@@ -1,6 +1,6 @@
 package jp.sys_link.entity;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,7 +32,7 @@ public class Billboards {
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "created_at")
-	public Timestamp createdAt;
+	public Date createdAt;
 
 	@ManyToOne
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
