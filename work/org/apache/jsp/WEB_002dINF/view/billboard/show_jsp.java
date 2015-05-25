@@ -9,10 +9,14 @@ public final class show_jsp extends org.apache.jasper.runtime.HttpJspBase
 
 static private org.apache.jasper.runtime.ProtectedFunctionMapper _jspx_fnmap_0;
 static private org.apache.jasper.runtime.ProtectedFunctionMapper _jspx_fnmap_1;
+static private org.apache.jasper.runtime.ProtectedFunctionMapper _jspx_fnmap_2;
 
 static {
   _jspx_fnmap_0= org.apache.jasper.runtime.ProtectedFunctionMapper.getMapForFunction("f:url", org.seasar.struts.taglib.S2Functions.class, "url", new Class[] {java.lang.String.class});
-  _jspx_fnmap_1= org.apache.jasper.runtime.ProtectedFunctionMapper.getMapForFunction("f:br", org.seasar.struts.taglib.S2Functions.class, "br", new Class[] {java.lang.String.class});
+  _jspx_fnmap_1= org.apache.jasper.runtime.ProtectedFunctionMapper.getMapForFunction("f:h", org.seasar.struts.taglib.S2Functions.class, "h", new Class[] {java.lang.Object.class});
+  _jspx_fnmap_2= org.apache.jasper.runtime.ProtectedFunctionMapper.getInstance();
+  _jspx_fnmap_2.mapFunction("f:br", org.seasar.struts.taglib.S2Functions.class, "br", new Class[] {java.lang.String.class});
+  _jspx_fnmap_2.mapFunction("f:h", org.seasar.struts.taglib.S2Functions.class, "h", new Class[] {java.lang.Object.class});
 }
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -159,25 +163,25 @@ static {
         out.write("\t\t\t</div>\r\n");
         out.write("\t\t\t<div class=\"mid_title\">タイトル</div>\r\n");
         out.write("\t\t\t<div class=\"report\">");
-        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${billboardItems[0].title}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(billboardItem.title)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
         out.write("</div>\r\n");
         out.write("\t\t\t<div class=\"mid_title\">内容</div>\r\n");
         out.write("\t\t\t<div class=\"report\">");
-        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:br(billboardItems[0].note)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:br(f:h(billboardItem.note))}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_2, false));
         out.write("</div>\r\n");
         out.write("\t\t\t<div class=\"mid_title\">分類</div>\r\n");
         out.write("\t\t\t<div class=\"report\">");
-        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${billboardItems[0].nameMst.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(billboardItem.nameMst.name)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_2, false));
         out.write("</div>\r\n");
         out.write("\t\t\t<div class=\"mid_title\">作成者</div>\r\n");
         out.write("\t\t\t<div class=\"report\">");
-        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${billboardItems[0].user.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(billboardItem.user.name)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_2, false));
         out.write("</div>\r\n");
         out.write("\r\n");
         out.write("\t\t\t<hr size=\"1\" />\r\n");
         out.write("\t\t\t<div align=\"center\">\r\n");
-        out.write("\t\t\t\t<input type=\"submit\" name=\"edit\" value=\"編集\" /> <input\r\n");
-        out.write("\t\t\t\t\ttype=\"submit\" name=\"index\" value=\"キャンセル\" />\r\n");
+        out.write("\t\t\t\t<input type=\"submit\" name=\"edit\" value=\"編集\" /> <input type=\"submit\"\r\n");
+        out.write("\t\t\t\t\tname=\"index\" value=\"キャンセル\" />\r\n");
         out.write("\t\t\t</div>\r\n");
         out.write("\t\t</div>\r\n");
         out.write("\t");

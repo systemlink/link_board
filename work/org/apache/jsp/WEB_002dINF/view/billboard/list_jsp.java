@@ -97,12 +97,39 @@ static {
       out.write("\t");
       if (_jspx_meth_html_005ferrors_005f0(_jspx_page_context))
         return;
-      out.write('\r');
-      out.write('\n');
-      out.write('	');
+      out.write("\r\n");
+      out.write("\t<div id=\"main\" class=\"container\">\r\n");
+      out.write("\t\t<h3 align=\"center\">掲示板</h3>\r\n");
+      out.write("\t\t<hr size=\"4\" />\r\n");
+      out.write("\t\t<div align=\"right\">\r\n");
+      out.write("\t\t\t");
       if (_jspx_meth_s_005fform_005f0(_jspx_page_context))
         return;
       out.write("\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("\t\t<table border=\"1\" cellspacing=\"0\" cellpadding=\"5\">\r\n");
+      out.write("\t\t\t<colgroup>\r\n");
+      out.write("\t\t\t\t<col width=\"100px\" />\r\n");
+      out.write("\t\t\t\t<col width=\"150px\" />\r\n");
+      out.write("\t\t\t\t<col width=\"400px\" />\r\n");
+      out.write("\t\t\t\t<col width=\"100px\" />\r\n");
+      out.write("\t\t\t\t<col width=\"55px\" />\r\n");
+      out.write("\t\t\t\t<col width=\"55px\" />\r\n");
+      out.write("\t\t\t</colgroup>\r\n");
+      out.write("\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t<th>作成日</th>\r\n");
+      out.write("\t\t\t\t<th>分類</th>\r\n");
+      out.write("\t\t\t\t<th>タイトル</th>\r\n");
+      out.write("\t\t\t\t<th>作成者</th>\r\n");
+      out.write("\t\t\t\t<th></th>\r\n");
+      out.write("\t\t\t\t<th></th>\r\n");
+      out.write("\t\t\t</tr>\r\n");
+      out.write("\t\t\t");
+      if (_jspx_meth_c_005fforEach_005f0(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("\t\t</table>\r\n");
+      out.write("\t</div>\r\n");
       out.write("</body>\r\n");
       out.write("\r\n");
       out.write("</html>");
@@ -148,37 +175,9 @@ static {
     if (_jspx_eval_s_005fform_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("\t\t<div id=\"main\" class=\"container\">\r\n");
-        out.write("\t\t\t<h3 align=\"center\">掲示板</h3>\r\n");
-        out.write("\t\t\t<hr size=\"4\" />\r\n");
-        out.write("\t\t\t<div align=\"right\">\r\n");
-        out.write("\t\t\t\t<input type=\"submit\" name=\"index\" value=\"戻る\" /> <input\r\n");
-        out.write("\t\t\t\t\ttype=\"submit\" name=\"create\" value=\"新規作成\" />\r\n");
-        out.write("\t\t\t</div>\r\n");
-        out.write("\t\t\t<table border=\"1\" cellspacing=\"0\" cellpadding=\"5\">\r\n");
-        out.write("\t\t\t\t<colgroup>\r\n");
-        out.write("\t\t\t\t\t<col width=\"100px\" />\r\n");
-        out.write("\t\t\t\t\t<col width=\"100px\" />\r\n");
-        out.write("\t\t\t\t\t<col width=\"400px\" />\r\n");
-        out.write("\t\t\t\t\t<col width=\"100px\" />\r\n");
-        out.write("\t\t\t\t\t<col width=\"55px\" />\r\n");
-        out.write("\t\t\t\t\t<col width=\"55px\" />\r\n");
-        out.write("\t\t\t\t</colgroup>\r\n");
-        out.write("\t\t\t\t<tr>\r\n");
-        out.write("\t\t\t\t\t<th>作成日</th>\r\n");
-        out.write("\t\t\t\t\t<th>分類</th>\r\n");
-        out.write("\t\t\t\t\t<th>タイトル</th>\r\n");
-        out.write("\t\t\t\t\t<th>作成者</th>\r\n");
-        out.write("\t\t\t\t\t<th></th>\r\n");
-        out.write("\t\t\t\t\t<th></th>\r\n");
-        out.write("\t\t\t\t</tr>\r\n");
-        out.write("\t\t\t\t");
-        if (_jspx_meth_c_005fforEach_005f0(_jspx_th_s_005fform_005f0, _jspx_page_context))
-          return true;
-        out.write("\r\n");
-        out.write("\t\t\t</table>\r\n");
-        out.write("\t\t</div>\r\n");
-        out.write("\t");
+        out.write("\t\t\t\t<input type=\"submit\" name=\"index\" value=\"戻る\" />\r\n");
+        out.write("\t\t\t\t<input type=\"submit\" name=\"create\" value=\"新規作成\" />\r\n");
+        out.write("\t\t\t");
         int evalDoAfterBody = _jspx_th_s_005fform_005f0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -192,19 +191,19 @@ static {
     return false;
   }
 
-  private boolean _jspx_meth_c_005fforEach_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fform_005f0, PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_005fforEach_005f0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:forEach
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvarStatus_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
-    _jspx_th_c_005fforEach_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /WEB-INF/view/billboard/list.jsp(35,4) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setParent(null);
+    // /WEB-INF/view/billboard/list.jsp(36,3) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("e");
-    // /WEB-INF/view/billboard/list.jsp(35,4) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboard/list.jsp(36,3) name = varStatus type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVarStatus("s");
-    // /WEB-INF/view/billboard/list.jsp(35,4) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboard/list.jsp(36,3) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${billboardItems}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
     try {
@@ -212,35 +211,32 @@ static {
       if (_jspx_eval_c_005fforEach_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("\t\t\t\t\t<tr style=\"background-color:");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${s.index %2 == 0 ? 'white' : 'aqua'}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("\t\t\t\t<tr\r\n");
+          out.write("\t\t\t\t\tstyle=\"background-color:");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${s.index %2 == 0 ? '#f9f9f9' : 'white'}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("\">\r\n");
-          out.write("\t\t\t\t\t\t<td>");
+          out.write("\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.createdAt)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
           out.write("</td>\r\n");
-          out.write("\t\t\t\t\t\t<td>");
+          out.write("\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.nameMst.name)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
           out.write("</td>\r\n");
-          out.write("\t\t\t\t\t\t<td>");
+          out.write("\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.title)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
           out.write("</td>\r\n");
-          out.write("\t\t\t\t\t\t<td>");
+          out.write("\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.user.name)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_1, false));
           out.write("</td>\r\n");
-          out.write("\t\t\t\t\t\t<td><button>\r\n");
-          out.write("\t\t\t\t\t\t\t\t");
+          out.write("\t\t\t\t\t<td>");
           if (_jspx_meth_s_005flink_005f0(_jspx_th_c_005fforEach_005f0, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f0))
             return true;
-          out.write("\r\n");
-          out.write("\t\t\t\t\t\t\t</button></td>\r\n");
-          out.write("\t\t\t\t\t\t<td><button>\r\n");
-          out.write("\t\t\t\t\t\t\t\t");
+          out.write("</td>\r\n");
+          out.write("\t\t\t\t\t<td>");
           if (_jspx_meth_s_005flink_005f1(_jspx_th_c_005fforEach_005f0, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f0))
             return true;
-          out.write("\r\n");
-          out.write("\t\t\t\t\t\t\t</button></td>\r\n");
-          out.write("\t\t\t\t\t</tr>\r\n");
-          out.write("\t\t\t\t");
+          out.write("</td>\r\n");
+          out.write("\t\t\t\t</tr>\r\n");
+          out.write("\t\t\t");
           int evalDoAfterBody = _jspx_th_c_005fforEach_005f0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -268,7 +264,7 @@ static {
     org.seasar.struts.taglib.S2LinkTag _jspx_th_s_005flink_005f0 = (org.seasar.struts.taglib.S2LinkTag) _005fjspx_005ftagPool_005fs_005flink_0026_005fhref.get(org.seasar.struts.taglib.S2LinkTag.class);
     _jspx_th_s_005flink_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005flink_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/view/billboard/list.jsp(42,8) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboard/list.jsp(43,9) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005flink_005f0.setHref((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("show/${e.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_s_005flink_005f0 = _jspx_th_s_005flink_005f0.doStartTag();
     if (_jspx_eval_s_005flink_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -279,7 +275,9 @@ static {
         _jspx_th_s_005flink_005f0.doInitBody();
       }
       do {
-        out.write(" 詳細 ");
+        out.write("\r\n");
+        out.write("\t\t\t\t\t\t\t<button type=\"submit\">詳細</button>\r\n");
+        out.write("\t\t\t\t\t\t");
         int evalDoAfterBody = _jspx_th_s_005flink_005f0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -305,7 +303,7 @@ static {
     org.seasar.struts.taglib.S2LinkTag _jspx_th_s_005flink_005f1 = (org.seasar.struts.taglib.S2LinkTag) _005fjspx_005ftagPool_005fs_005flink_0026_005fhref.get(org.seasar.struts.taglib.S2LinkTag.class);
     _jspx_th_s_005flink_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005flink_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/view/billboard/list.jsp(45,8) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboard/list.jsp(46,9) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005flink_005f1.setHref((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("edit/${e.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_s_005flink_005f1 = _jspx_th_s_005flink_005f1.doStartTag();
     if (_jspx_eval_s_005flink_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -316,7 +314,9 @@ static {
         _jspx_th_s_005flink_005f1.doInitBody();
       }
       do {
-        out.write(" 編集 ");
+        out.write("\r\n");
+        out.write("\t\t\t\t\t\t\t<button type=\"submit\">編集</button>\r\n");
+        out.write("\t\t\t\t\t\t");
         int evalDoAfterBody = _jspx_th_s_005flink_005f1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
