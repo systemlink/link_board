@@ -3,22 +3,28 @@ package jp.sys_link.action;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 
 import jp.sys_link.entity.Billboards;
 import jp.sys_link.entity.NameMst;
+import jp.sys_link.entity.Upfile;
 import jp.sys_link.form.BillboardsForm;
 import jp.sys_link.service.BillboardsService;
 
+import org.apache.struts.upload.FormFile;
 import org.seasar.extension.jdbc.JdbcManager;
 import org.seasar.framework.beans.util.Beans;
 import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
+import org.seasar.struts.util.UploadUtil;
 
 public class BillboardsAction {
 
 	public List<Billboards> billboardsItems;
 	public List<NameMst> nameMstItems;
 	public Billboards billboardItems;
+	public Upfile upfile;
 
 	@ActionForm
 	@Resource
@@ -30,6 +36,12 @@ public class BillboardsAction {
 	@Resource
 	private JdbcManager jdbcManager;
 
+	@Resource
+	private HttpServletRequest request;
+
+	@Resource
+	private ServletContext application;
+
 	@Execute(validator = false)
 	public String index() {
 		billboardsItems = jdbcManager.from(Billboards.class).innerJoin("user")
@@ -39,6 +51,7 @@ public class BillboardsAction {
 
 	@Execute(validator = false)
 	public String create() {
+		UploadUtil.checkSizeLimit(request);
 		nameMstItems = jdbcManager.from(NameMst.class).getResultList();
 		return "new.jsp";
 	}
@@ -48,6 +61,7 @@ public class BillboardsAction {
 		billboardItems = jdbcManager.from(Billboards.class).innerJoin("user")
 				.innerJoin("nameMst").where("id = ?", billboardsForm.id)
 				.getSingleResult();
+		billboardsService.insert(billboardItems);
 		return "show.jsp";
 	}
 
@@ -62,11 +76,12 @@ public class BillboardsAction {
 
 	@Execute(validator = true, input = "create", redirect = true)
 	public String insert() {
+		billboardsForm.userId = "1";
 		Billboards entity = Beans
 				.createAndCopy(Billboards.class, billboardsForm)
 				.dateConverter("yyyy/MM/dd").execute();
-		entity.userId = 1;
 		billboardsService.insert(entity);
+		upload(billboardsForm.formFile);
 		return "/billboards/";
 	}
 
@@ -88,4 +103,9 @@ public class BillboardsAction {
 		return "/billboards/";
 	}
 
+	protected void upload(FormFile file){
+		String path = application.getRealPath(
+				"/WEB-INF/" + file.getFileName());
+		UploadUtil.write(path, file);
+	}
 }

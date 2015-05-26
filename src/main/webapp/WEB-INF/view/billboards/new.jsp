@@ -17,7 +17,10 @@
 			<hr size=4>
 		</header>
 		<br>
-		<s:form>
+		<s:form enctype="multipart/form-data">
+			<input type="file" name="formfile" />
+			<br />
+
 			<table border=1>
 				<colgroup>
 					<col width="300px">
@@ -46,6 +49,7 @@
 							</c:forEach>
 						</html:select></td>
 				</tr>
+
 			</table>
 			<br>
 			<hr>
@@ -55,6 +59,7 @@
 				<s:link href="/billboards/">
 					<button type="submit">キャンセル</button>
 				</s:link>
+
 			</div>
 		</s:form>
 	</div>
