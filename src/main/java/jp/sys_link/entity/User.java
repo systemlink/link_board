@@ -22,21 +22,101 @@ public class User implements Serializable {
     /** idプロパティ */
     @Id
     @Column(precision = 10, nullable = false, unique = true)
-    public Integer id;
+    private Integer id;
 
     /** userNoプロパティ */
     @Column(length = 5, nullable = false, unique = false)
-    public String userNo;
+    private String userNo;
 
     /** KNameプロパティ */
     @Column(length = 40, nullable = false, unique = false)
-    public String KName;
+    private String KName;
 
     /** nameプロパティ */
     @Column(length = 40, nullable = false, unique = false)
-    public String name;
+    private String name;
 
     /** billboardList関連プロパティ */
     @OneToMany(mappedBy = "user")
-    public List<Billboard> billboardList;
+    private List<Billboard> billboardList;
+
+	/**
+	 * idプロパティを取得します。
+	 * @return idプロパティ
+	 */
+	public Integer getId() {
+	    return id;
+	}
+
+	/**
+	 * idプロパティを設定します。
+	 * @param id idプロパティ
+	 */
+	public void setId(Integer id) {
+	    this.id = id;
+	}
+
+	/**
+	 * userNoプロパティを取得します。
+	 * @return userNoプロパティ
+	 */
+	public String getUserNo() {
+	    return userNo;
+	}
+
+	/**
+	 * userNoプロパティを設定します。
+	 * @param userNo userNoプロパティ
+	 */
+	public void setUserNo(String userNo) {
+	    this.userNo = userNo;
+	}
+
+	/**
+	 * KNameプロパティを取得します。
+	 * @return KNameプロパティ
+	 */
+	public String getKName() {
+	    return KName;
+	}
+
+	/**
+	 * KNameプロパティを設定します。
+	 * @param KName KNameプロパティ
+	 */
+	public void setKName(String KName) {
+	    this.KName = KName;
+	}
+
+	/**
+	 * nameプロパティを取得します。
+	 * @return nameプロパティ
+	 */
+	public String getName() {
+	    return name;
+	}
+
+	/**
+	 * nameプロパティを設定します。
+	 * @param name nameプロパティ
+	 */
+	public void setName(String name) {
+	    this.name = name;
+	}
+
+	/**
+	 * billboardList関連プロパティを取得します。
+	 * @return billboardList関連プロパティ
+	 */
+	public List<Billboard> getBillboardList() {
+	    return billboardList;
+	}
+
+	/**
+	 * billboardList関連プロパティを設定します。
+	 * @param billboardList billboardList関連プロパティ
+	 */
+	public void setBillboardList(List<Billboard> billboardList) {
+	    this.billboardList = billboardList;
+	}
 }

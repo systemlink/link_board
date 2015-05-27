@@ -1,5 +1,6 @@
 package jp.sys_link.action;
 
+
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -8,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import jp.sys_link.entity.Billboard;
 import jp.sys_link.entity.NameMst;
-import jp.sys_link.entity.Upfile;
 import jp.sys_link.form.BillboardForm;
 import jp.sys_link.form.UpfileForm;
 import jp.sys_link.service.BillboardService;
@@ -64,8 +64,8 @@ public class BillboardAction {
 
 	@Execute(validator = false, urlPattern = "show/{id}")
 	public String show() {
-		billboardItem = jdbcManager.from(Billboard.class).leftOuterJoin("user")
-				.leftOuterJoin("nameMst").where("id = ?", billboardForm.id)
+		billboardItem = jdbcManager.from(Billboard.class).innerJoin("user")
+				.innerJoin("nameMst").where("id = ?", billboardForm.getId())
 				.getSingleResult();
 		/*
 		 * Billboard entity =
@@ -80,7 +80,7 @@ public class BillboardAction {
 	public String edit() {
 		nameMstItems = jdbcManager.from(NameMst.class).getResultList();
 		Billboard entity = billboardService.findById(Integer
-				.valueOf(billboardForm.id));
+				.valueOf(billboardForm.getId()));
 		Beans.copy(entity, billboardForm).dateConverter("yyyy-MM-dd").execute();
 		return "edit.jsp";
 	}
@@ -102,20 +102,21 @@ public class BillboardAction {
 
 	@Execute(validator = true, input = "create", redirect = true)
 	public String insert() {
-		billboardForm.user_id = "1";
+		billboardForm.setUser_id("1");
 		Billboard entity = Beans.createAndCopy(Billboard.class, billboardForm)
 				.dateConverter("yyyy-MM-dd").execute();
 		billboardService.insert(entity);
-		upload(upfileForm.formFile);
-		for (FormFile file : upfileForm.formFiles) {
+		upload(upfileForm.getFormFile());
+		for (FormFile file : upfileForm.getFormFiles()) {
 			upload(file);
 		}
+
 		return "/billboard/";
 	}
 
 	@Execute(input = "edit.jsp", redirect = true)
 	public String update() {
-		billboardForm.user_id = "1";
+		billboardForm.setUser_id("1");
 		Billboard entity = Beans.createAndCopy(Billboard.class, billboardForm)
 				.dateConverter("yyyy-MM-dd").execute();
 		billboardService.update(entity);
@@ -123,12 +124,42 @@ public class BillboardAction {
 	}
 
 	protected void upload(FormFile file) {
-		upfileForm.file = file;
-		upfileForm.fileName = file.getFileName();
-		upfileForm.billboardId = billboardForm.id;
+		String path = application.getRealPath("/WEB-INF/work/" + file.getFileName());
+		UploadUtil.write(path, file);
+
+		/*
+		SingletonS2ContainerFactory.init();
+		S2Container container = SingletonS2ContainerFactory.getContainer();
+
+		JdbcManager jdbcManager =
+			(JdbcManager) container.getComponent(JdbcManager.class);
+
+		try {
+
+			File f = new File("/WEB-INF/work/" + file.getFileName());
+
+			InputStream inputStream = new FileInputStream(f);
+
+			Upfile ufile = new Upfile();
+			ufile.setFileName(file.getFileName());
+			ufile.setBillboardId(Billboard entity.getId());
+			ufile.setImage(getBytes(inputStream));
+
+			int count = jdbcManager.insert(image).execute();
+
+			System.out.println(count);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		*/
+		/*
+		upfileForm.setFile(file);
+		upfileForm.setFileName(file.getFileName());
+		upfileForm.setBillboardId(billboardForm.getId());
 		Upfile entity = Beans.createAndCopy(Upfile.class, upfileForm)
 				.dateConverter("yyyy-MM-dd").execute();
 
 		upfileService.insert(entity);
+		*/
 	}
 }
