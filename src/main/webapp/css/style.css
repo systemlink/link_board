@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+
+h3 {
+	color: #428bca;
+}
+
+hr {
+	background-color: #428bca;
+}
+
+th {
+	background-color: #428bca;
+	color: #ffffff;
+}
+
+table {
+	border-color: #c0c0c0;
+	border-collapse: collapse;
+}
+
+td.bg-primary {
+	background-color: #428bca;
+	color: #ffffff;
+}
+
+div.mid_title {
+	color: #428bca;
+}
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	width: 960px;
+}
+
+.report {
+	padding-left: 20px;
+}
+}
