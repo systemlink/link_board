@@ -13,28 +13,84 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="name_mst")
+@Table(name = "name_mst")
 public class NameMst {
 
 	@Id
 	@GeneratedValue
-	public Integer id;
+	private Integer id;
 
 	@Column(name = "code_id")
-	public String codeId;
+	private String codeId;
 
 	@Column(name = "code_id_name")
-	public String codeIdName;
+	private String codeIdName;
 
-	public String code;
+	private String code;
 
-	public String name;
+	private String name;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "created_at")
-	public Timestamp createdAt;
+	private Timestamp createdAt;
 
 	@OneToMany(mappedBy = "nameMst")
-	public List<Billboards> billboardsList;
+	private List<Billboards> billboardsList;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getCodeId() {
+		return codeId;
+	}
+
+	public void setCodeId(String codeId) {
+		this.codeId = codeId;
+	}
+
+	public String getCodeIdName() {
+		return codeIdName;
+	}
+
+	public void setCodeIdName(String codeIdName) {
+		this.codeIdName = codeIdName;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Timestamp getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Timestamp createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public List<Billboards> getBillboardsList() {
+		return billboardsList;
+	}
+
+	public void setBillboardsList(List<Billboards> billboardsList) {
+		this.billboardsList = billboardsList;
+	}
 
 }

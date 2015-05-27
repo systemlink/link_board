@@ -59,29 +59,31 @@ public class BillboardsAction {
 	@Execute(validator = false, urlPattern = "show/{id}")
 	public String show() {
 		billboardItems = jdbcManager.from(Billboards.class).innerJoin("user")
-				.innerJoin("nameMst").where("id = ?", billboardsForm.id)
+				.innerJoin("nameMst").where("id = ?", billboardsForm.getId())
 				.getSingleResult();
-		billboardsService.insert(billboardItems);
 		return "show.jsp";
 	}
 
 	@Execute(validator = false, urlPattern = "edit/{id}")
 	public String edit() {
-		nameMstItems = jdbcManager.from(NameMst.class).getResultList();
 		Billboards entity = billboardsService.findById(Integer
-				.valueOf(billboardsForm.id));
+				.valueOf(billboardsForm.getId()));
 		Beans.copy(entity, billboardsForm).execute();
 		return "edit.jsp";
 	}
 
 	@Execute(validator = true, input = "create", redirect = true)
 	public String insert() {
-		billboardsForm.userId = "1";
+
+		// TODO ログイン機能を追加することになったら、セッションからログインIDを取得する
+		billboardsForm.setUserId("1");
+
 		Billboards entity = Beans
 				.createAndCopy(Billboards.class, billboardsForm)
 				.dateConverter("yyyy/MM/dd").execute();
 		billboardsService.insert(entity);
-		upload(billboardsForm.formFile);
+
+		upload(billboardsForm.getFormFile());
 		return "/billboards/";
 	}
 
@@ -103,9 +105,9 @@ public class BillboardsAction {
 		return "/billboards/";
 	}
 
-	protected void upload(FormFile file){
-		String path = application.getRealPath(
-				"/WEB-INF/" + file.getFileName());
+	protected void upload(FormFile file) {
+		// アップロードできているかの確認。
+		String path = application.getRealPath("/WEB-INF/" + file.getFileName());
 		UploadUtil.write(path, file);
 	}
 }

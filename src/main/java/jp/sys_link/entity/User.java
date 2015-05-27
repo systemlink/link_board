@@ -13,14 +13,48 @@ public class User {
 
 	@Id
 	@GeneratedValue
-	public Integer id;
+	private Integer id;
 
 	@Column(name = "user_no")
-	public String userNo;
+	private String userNo;
 
 	@Column
-	public String name;
+	private String name;
 
 	@OneToMany(mappedBy = "user")
-	public List<Billboards> billboardsList;
+	private List<Billboards> billboardsList;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getUserNo() {
+		return userNo;
+	}
+
+	public void setUserNo(String userNo) {
+		this.userNo = userNo;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<Billboards> getBillboardsList() {
+		return billboardsList;
+	}
+
+	public void setBillboardsList(List<Billboards> billboardsList) {
+		this.billboardsList = billboardsList;
+	}
+
+
 }

@@ -18,32 +18,104 @@ public class Billboards {
 
 	@Id
 	@GeneratedValue
-	public Integer id;
+	private Integer id;
 
 	@Column
-	public String title;
+	private String title;
 
 	@Column
-	public String note;
+	private String note;
 
 	@Column(name = "billboard_group_id")
-	public Integer billboardGroupId;
+	private Integer billboardGroupId;
 
 	@Column(name = "user_id")
-	public Integer userId;
+	private Integer userId;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "created_at")
-	public Date createdAt;
+	private Date createdAt;
 
 	@ManyToOne
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
-	public User user;
+	private User user;
 
 	@ManyToOne
 	@JoinColumn(name = "billboard_group_id", referencedColumnName = "id")
-	public NameMst nameMst;
+	private NameMst nameMst;
 
 	@OneToMany(mappedBy = "billboards")
-	public List<Upfile> upfileList;
+	private List<Upfile> upfileList;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public Integer getBillboardGroupId() {
+		return billboardGroupId;
+	}
+
+	public void setBillboardGroupId(Integer billboardGroupId) {
+		this.billboardGroupId = billboardGroupId;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public NameMst getNameMst() {
+		return nameMst;
+	}
+
+	public void setNameMst(NameMst nameMst) {
+		this.nameMst = nameMst;
+	}
+
+	public List<Upfile> getUpfileList() {
+		return upfileList;
+	}
+
+	public void setUpfileList(List<Upfile> upfileList) {
+		this.upfileList = upfileList;
+	}
 }

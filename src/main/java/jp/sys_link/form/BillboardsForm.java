@@ -5,22 +5,87 @@ import org.seasar.struts.annotation.Required;
 
 public class BillboardsForm {
 
-	public String id = "";
+	private String id = "";
 
 	@Required(target = "insert,update")
-	public String title = "";
+	private String title = "";
 
 	@Required(target = "insert,update")
-	public String note = "";
+	private String note = "";
 
 	@Required(target = "insert,update")
-	public String billboardGroupId = "";
+	private String billboardGroupId = "";
 
-	public String userId = "";
+	private String userId = "";
 
-	public String createdAt = "";
+	private String createdAt = "";
 
-	public FormFile formFile;
+	private FormFile formFile;
 
-	public FormFile[] formFiles;
+	private FormFile[] formFiles;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public String getBillboardGroupId() {
+		return billboardGroupId;
+	}
+
+	public void setBillboardGroupId(String billboardGroupId) {
+		this.billboardGroupId = billboardGroupId;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public FormFile getFormFile() {
+		return formFile;
+	}
+
+	public void setFormFile(FormFile formFile) {
+		this.formFile = formFile;
+	}
+
+	public FormFile[] getFormFiles() {
+		return formFiles;
+	}
+
+	public void setFormFiles(FormFile[] formFiles) {
+		this.formFiles = formFiles;
+	}
+
 }
