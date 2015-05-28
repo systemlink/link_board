@@ -1,5 +1,6 @@
 package jp.sys_link.form;
 
+import org.apache.struts.upload.FormFile;
 import org.seasar.struts.annotation.Required;
 
 public class BillboardForm {
@@ -18,6 +19,10 @@ public class BillboardForm {
 	private String user_id = "";
 
 	private String createdAt = "";
+
+	public FormFile formFile;
+
+	public FormFile[] formFiles;
 
 	/**
 	 * idを取得します。

@@ -8,7 +8,7 @@ public class UpfileForm {
 
 	private String fileName;
 
-	private FormFile file;
+	private byte[] file;
 
 	private String billboardId;
 
@@ -48,11 +48,13 @@ public class UpfileForm {
 	    this.fileName = fileName;
 	}
 
+
+
 	/**
 	 * fileを取得します。
 	 * @return file
 	 */
-	public FormFile getFile() {
+	public byte[] getFile() {
 	    return file;
 	}
 
@@ -60,7 +62,7 @@ public class UpfileForm {
 	 * fileを設定します。
 	 * @param file file
 	 */
-	public void setFile(FormFile file) {
+	public void setFile(byte[] file) {
 	    this.file = file;
 	}
 
