@@ -141,9 +141,8 @@ public class BillboardsAction {
 		// TODO アップロードしたファイル情報をデータベースに格納
 		//アップロードされたかどうか、ファイルネームで判定
 		if (file.getFileName() != "") {
-			String sql = "select * from billboards where id = (select Max(id) from billboards)";
-			Billboards entity = jdbcManager.selectBySql(Billboards.class, sql)
-					.getSingleResult();
+
+			Billboards entity = billboardsService.findByMaxId();
 			try {
 				InputStream is = file.getInputStream();
 				upfileForm.setFile(IOUtils.toByteArray(is));
