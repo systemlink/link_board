@@ -61,16 +61,13 @@ public class BillboardAction {
 
 	@Execute(validator = false)
 	public String index() {
-		billboardItems = jdbcManager.from(Billboard.class).innerJoin("user")
-				.innerJoin("nameMst").orderBy("id").getResultList();
+		billboardItems = billboardService.makeBillboardItems();
 		return "list.jsp";
 	}
 
 	@Execute(validator = false, urlPattern = "show/{id}")
 	public String show() {
-		billboardItem = jdbcManager.from(Billboard.class).innerJoin("user")
-				.innerJoin("nameMst").where("id = ?", billboardForm.getId())
-				.getSingleResult();
+		billboardItem = billboardService.makeBillboardItem(billboardForm.getId());
 		/*
 		 * Billboard entity =
 		 * billboardService.findById(Integer.valueOf(billboardForm.id));
@@ -82,7 +79,7 @@ public class BillboardAction {
 
 	@Execute(validator = false, urlPattern = "edit/{id}")
 	public String edit() {
-		nameMstItems = jdbcManager.from(NameMst.class).getResultList();
+		nameMstItems = nameMstService.findAll();
 		Billboard entity = billboardService.findById(Integer
 				.valueOf(billboardForm.getId()));
 		Beans.copy(entity, billboardForm).dateConverter("yyyy-MM-dd").execute();
@@ -92,7 +89,7 @@ public class BillboardAction {
 	@Execute(validator = false)
 	public String create() {
 		UploadUtil.checkSizeLimit(request);
-		nameMstItems = jdbcManager.from(NameMst.class).getResultList();
+		nameMstItems = nameMstService.findAll();
 		return "create.jsp";
 	}
 
@@ -102,8 +99,7 @@ public class BillboardAction {
 				.dateConverter("yyyy-MM-dd").execute();
 		billboardService.delete(entity);
 
-		upfileItems = jdbcManager.from(Upfile.class)
-				.where("billboardId = ?", entity.getId()).getResultList();
+		upfileItems = upfileService.makeUpfileItems(entity.getId());
 		for(Upfile up_entity : upfileItems){
 			upfileService.delete(up_entity);
 		}
@@ -140,8 +136,6 @@ public class BillboardAction {
 		 * file.getFileName()); UploadUtil.write(path, file);
 		 */
 
-		final String SQL = "select * from billboard where id = (select max(id) from billboard)";
-
 		if (file.getFileName() != "") {
 			try {
 				InputStream is = file.getInputStream();
@@ -149,8 +143,7 @@ public class BillboardAction {
 				upfileForm.setFile(IOUtils.toByteArray(is));
 				upfileForm.setFileName(file.getFileName());
 
-				Billboard entity = jdbcManager
-						.selectBySql(Billboard.class, SQL).getSingleResult();
+				Billboard entity = billboardService.makeBIllboardEntityMaxId();
 
 				upfileForm.setBillboardId(entity.getId().toString());
 				Upfile up_entity = Beans
