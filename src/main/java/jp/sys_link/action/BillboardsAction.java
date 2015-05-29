@@ -15,6 +15,7 @@ import jp.sys_link.entity.Upfile;
 import jp.sys_link.form.BillboardsForm;
 import jp.sys_link.form.UpfileForm;
 import jp.sys_link.service.BillboardsService;
+import jp.sys_link.service.NameMstService;
 import jp.sys_link.service.UpfileService;
 
 import org.apache.commons.io.IOUtils;
@@ -47,6 +48,9 @@ public class BillboardsAction {
 	private UpfileService upfileService;
 
 	@Resource
+	private NameMstService nameMstService;
+
+	@Resource
 	private JdbcManager jdbcManager;
 
 	@Resource
@@ -65,7 +69,7 @@ public class BillboardsAction {
 	@Execute(validator = false)
 	public String create() {
 		UploadUtil.checkSizeLimit(request);
-		nameMstItems = jdbcManager.from(NameMst.class).getResultList();
+		nameMstItems = nameMstService.findAll();
 		return "new.jsp";
 	}
 
@@ -79,7 +83,7 @@ public class BillboardsAction {
 
 	@Execute(validator = false, urlPattern = "edit/{id}")
 	public String edit() {
-		nameMstItems = jdbcManager.from(NameMst.class).getResultList();
+		nameMstItems = nameMstService.findAll();
 		Billboards entity = billboardsService.findById(Integer
 				.valueOf(billboardsForm.getId()));
 		Beans.copy(entity, billboardsForm).execute();
