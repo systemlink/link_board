@@ -61,8 +61,7 @@ public class BillboardsAction {
 
 	@Execute(validator = false)
 	public String index() {
-		billboardsItems = jdbcManager.from(Billboards.class).innerJoin("user")
-				.innerJoin("nameMst").orderBy("id").getResultList();
+		billboardsItems = billboardsService.findBylist();
 		return "top.jsp";
 	}
 
@@ -75,9 +74,7 @@ public class BillboardsAction {
 
 	@Execute(validator = false, urlPattern = "show/{id}")
 	public String show() {
-		billboardItems = jdbcManager.from(Billboards.class).innerJoin("user")
-				.innerJoin("nameMst").where("id = ?", billboardsForm.getId())
-				.getSingleResult();
+		billboardItems = billboardsService.findByShowId(billboardsForm.getId());
 		return "show.jsp";
 	}
 
@@ -139,7 +136,7 @@ public class BillboardsAction {
 		 */
 
 		// TODO アップロードしたファイル情報をデータベースに格納
-		//アップロードされたかどうか、ファイルネームで判定
+		// アップロードされたかどうか、ファイルネームで判定
 		if (file.getFileName() != "") {
 
 			Billboards entity = billboardsService.findByMaxId();
