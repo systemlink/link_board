@@ -1,7 +1,6 @@
 package jp.sys_link.entity;
 
 import java.sql.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -29,6 +27,11 @@ public class Billboard {
 
 	private Integer user_id;
 
+	@Column(name = "file_name")
+	private String fileName;
+
+	private byte[] file;
+
 	@ManyToOne
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	private User user;
@@ -41,8 +44,7 @@ public class Billboard {
 	@Column(name = "created_at")
 	private Date createdAt;
 
-	@OneToMany(mappedBy = "billboard")
-	private List<Upfile> upfileList;
+
 
 	/**
 	 * idを取得します。
@@ -125,6 +127,38 @@ public class Billboard {
 	}
 
 	/**
+	 * fileNameを取得します。
+	 * @return fileName
+	 */
+	public String getFileName() {
+	    return fileName;
+	}
+
+	/**
+	 * fileNameを設定します。
+	 * @param fileName fileName
+	 */
+	public void setFileName(String fileName) {
+	    this.fileName = fileName;
+	}
+
+	/**
+	 * fileを取得します。
+	 * @return file
+	 */
+	public byte[] getFile() {
+	    return file;
+	}
+
+	/**
+	 * fileを設定します。
+	 * @param file file
+	 */
+	public void setFile(byte[] file) {
+	    this.file = file;
+	}
+
+	/**
 	 * userを取得します。
 	 * @return user
 	 */
@@ -172,20 +206,5 @@ public class Billboard {
 	    this.createdAt = createdAt;
 	}
 
-	/**
-	 * upfileListを取得します。
-	 * @return upfileList
-	 */
-	public List<Upfile> getUpfileList() {
-	    return upfileList;
-	}
-
-	/**
-	 * upfileListを設定します。
-	 * @param upfileList upfileList
-	 */
-	public void setUpfileList(List<Upfile> upfileList) {
-	    this.upfileList = upfileList;
-	}
 
 }

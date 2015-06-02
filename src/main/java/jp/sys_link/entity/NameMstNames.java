@@ -1,13 +1,14 @@
 package jp.sys_link.entity;
 
 import javax.annotation.Generated;
+import jp.sys_link.entity.BillboardNames._BillboardNames;
 import org.seasar.extension.jdbc.name.PropertyName;
 
 /**
  * {@link NameMst}のプロパティ名の集合です。
  * 
  */
-@Generated(value = {"S2JDBC-Gen 2.4.45", "org.seasar.extension.jdbc.gen.internal.model.NamesModelFactoryImpl"}, date = "2015/05/27 14:23:06")
+@Generated(value = {"S2JDBC-Gen 2.4.45", "org.seasar.extension.jdbc.gen.internal.model.NamesModelFactoryImpl"}, date = "2015/06/02 12:01:23")
 public class NameMstNames {
 
     /**
@@ -53,6 +54,15 @@ public class NameMstNames {
      */
     public static PropertyName<String> name() {
         return new PropertyName<String>("name");
+    }
+
+    /**
+     * billboardListのプロパティ名を返します。
+     * 
+     * @return billboardListのプロパティ名
+     */
+    public static _BillboardNames billboardList() {
+        return new _BillboardNames("billboardList");
     }
 
     /**
@@ -131,6 +141,15 @@ public class NameMstNames {
          */
         public PropertyName<String> name() {
             return new PropertyName<String>(this, "name");
+        }
+
+        /**
+         * billboardListのプロパティ名を返します。
+         * 
+         * @return billboardListのプロパティ名
+         */
+        public _BillboardNames billboardList() {
+            return new _BillboardNames(this, "billboardList");
         }
     }
 }

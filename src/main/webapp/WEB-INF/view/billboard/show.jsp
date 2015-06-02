@@ -25,6 +25,10 @@
 			<div class="report">${f:h(billboardItem.nameMst.name)}</div>
 			<div class="mid_title">作成者</div>
 			<div class="report">${f:h(billboardItem.user.name)}</div>
+			<div class="mid_title">添付ファイル</div>
+			<div class="report">
+				<input type="submit" name="download" value="${billboardItem.fileName}" />
+			</div>
 
 			<hr size="1" />
 			<div align="center">

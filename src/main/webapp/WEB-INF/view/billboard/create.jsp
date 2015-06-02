@@ -16,10 +16,6 @@
 			<hr size="4" />
 
 			<input type="file" name="formFile" /><br />
-			<c:forEach varStatus="s" begin="0" end="1">
-				<input type="file" name="formFiles[${s.index}]" />
-				<br />
-			</c:forEach>
 
 			<table border="1" cellspacing="0" cellpadding="3">
 				<colgroup>
@@ -42,7 +38,7 @@
 							style="width: 100%">
 							<html:option value=""></html:option>
 							<c:forEach var="e" varStatus="s" items="${nameMstItems}">
-								<option value="${f:h(e.id)}">${f:h(e.name)}</option>
+								<html:option value="${f:h(e.id)}">${f:h(e.name)}</html:option>
 							</c:forEach>
 						</html:select></td>
 				</tr>

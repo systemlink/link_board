@@ -1,27 +1,28 @@
 package jp.sys_link.action;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import jp.sys_link.entity.Billboard;
 import jp.sys_link.entity.NameMst;
-import jp.sys_link.entity.Upfile;
 import jp.sys_link.form.BillboardForm;
-import jp.sys_link.form.UpfileForm;
 import jp.sys_link.service.BillboardService;
 import jp.sys_link.service.NameMstService;
-import jp.sys_link.service.UpfileService;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.struts.upload.FormFile;
 import org.seasar.extension.jdbc.JdbcManager;
 import org.seasar.framework.beans.util.Beans;
+import org.seasar.framework.exception.IORuntimeException;
 import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
+import org.seasar.struts.util.ResponseUtil;
 import org.seasar.struts.util.UploadUtil;
 
 public class BillboardAction {
@@ -32,27 +33,21 @@ public class BillboardAction {
 
 	public List<NameMst> nameMstItems;
 
-	public List<Upfile> upfileItems;
-
 	@ActionForm
 	@Resource
 	protected BillboardForm billboardForm;
 
-	@ActionForm
-	@Resource
-	protected UpfileForm upfileForm;
-
 	@Resource
 	protected BillboardService billboardService;
-
-	@Resource
-	protected UpfileService upfileService;
 
 	@Resource
 	protected NameMstService nameMstService;
 
 	@Resource
 	protected HttpServletRequest request;
+
+	@Resource
+	protected HttpServletResponse response;
 
 	@Resource
 	protected ServletContext application;
@@ -99,24 +94,16 @@ public class BillboardAction {
 				.dateConverter("yyyy-MM-dd").execute();
 		billboardService.delete(entity);
 
-		upfileItems = upfileService.makeUpfileItems(entity.getId());
-		for(Upfile up_entity : upfileItems){
-			upfileService.delete(up_entity);
-		}
-
 		return "/billboard/";
 	}
 
 	@Execute(validator = true, input = "create", redirect = true)
 	public String insert() {
 		billboardForm.setUser_id("1");
+		upload(billboardForm.formFile);
 		Billboard entity = Beans.createAndCopy(Billboard.class, billboardForm)
 				.dateConverter("yyyy-MM-dd").execute();
 		billboardService.insert(entity);
-		upload(billboardForm.formFile);
-		for (FormFile file : billboardForm.formFiles) {
-			upload(file);
-		}
 
 		return "/billboard/";
 	}
@@ -130,32 +117,36 @@ public class BillboardAction {
 		return "/billboard/";
 	}
 
-	protected void upload(FormFile file) {
+	private void upload(FormFile file) {
 		/*
 		 * String path = application.getRealPath("/WEB-INF/work/" +
 		 * file.getFileName()); UploadUtil.write(path, file);
 		 */
 
 		if (file.getFileName() != "") {
+
 			try {
 				InputStream is = file.getInputStream();
 
-				upfileForm.setFile(IOUtils.toByteArray(is));
-				upfileForm.setFileName(file.getFileName());
-
-				Billboard entity = billboardService.makeBIllboardEntityMaxId();
-
-				upfileForm.setBillboardId(entity.getId().toString());
-				Upfile up_entity = Beans
-						.createAndCopy(Upfile.class, upfileForm)
-						.dateConverter("yyyy-MM-dd").execute();
-				upfileService.insert(up_entity);
+				billboardForm.setFile(IOUtils.toByteArray(is));
+				billboardForm.setFileName(file.getFileName());
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
+	}
 
+	@Execute(input = "show.jsp",validator = false, urlPattern = "download/{id}")
+	public String download(){
+		try{
+			billboardItem = billboardService.makeBillboardItem(billboardForm.getId());
+			ResponseUtil.download(new String(billboardItem.getFileName().getBytes("Shift_JIS"), "ISO-8859-1"),
+					billboardItem.getFile());
+		}catch(IOException e){
+			throw new IORuntimeException(e);
+		}
+		return null;
 	}
 
 }

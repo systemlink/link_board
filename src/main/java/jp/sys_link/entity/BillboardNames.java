@@ -1,20 +1,24 @@
 package jp.sys_link.entity;
 
-import java.sql.Timestamp;
+import java.sql.Date;
+
 import javax.annotation.Generated;
+
+import jp.sys_link.entity.NameMstNames._NameMstNames;
 import jp.sys_link.entity.UserNames._UserNames;
+
 import org.seasar.extension.jdbc.name.PropertyName;
 
 /**
  * {@link Billboard}のプロパティ名の集合です。
- * 
+ *
  */
-@Generated(value = {"S2JDBC-Gen 2.4.45", "org.seasar.extension.jdbc.gen.internal.model.NamesModelFactoryImpl"}, date = "2015/05/27 14:23:06")
+@Generated(value = {"S2JDBC-Gen 2.4.45", "org.seasar.extension.jdbc.gen.internal.model.NamesModelFactoryImpl"}, date = "2015/06/02 12:01:23")
 public class BillboardNames {
 
     /**
      * idのプロパティ名を返します。
-     * 
+     *
      * @return idのプロパティ名
      */
     public static PropertyName<Integer> id() {
@@ -23,7 +27,7 @@ public class BillboardNames {
 
     /**
      * titleのプロパティ名を返します。
-     * 
+     *
      * @return titleのプロパティ名
      */
     public static PropertyName<String> title() {
@@ -32,7 +36,7 @@ public class BillboardNames {
 
     /**
      * noteのプロパティ名を返します。
-     * 
+     *
      * @return noteのプロパティ名
      */
     public static PropertyName<String> note() {
@@ -41,7 +45,7 @@ public class BillboardNames {
 
     /**
      * billboardGroupIdのプロパティ名を返します。
-     * 
+     *
      * @return billboardGroupIdのプロパティ名
      */
     public static PropertyName<Integer> billboardGroupId() {
@@ -49,30 +53,39 @@ public class BillboardNames {
     }
 
     /**
-     * userIdのプロパティ名を返します。
-     * 
-     * @return userIdのプロパティ名
+     * user_idのプロパティ名を返します。
+     *
+     * @return user_idのプロパティ名
      */
-    public static PropertyName<Integer> userId() {
-        return new PropertyName<Integer>("userId");
+    public static PropertyName<Integer> user_id() {
+        return new PropertyName<Integer>("user_id");
     }
 
     /**
      * createdAtのプロパティ名を返します。
-     * 
+     *
      * @return createdAtのプロパティ名
      */
-    public static PropertyName<Timestamp> createdAt() {
-        return new PropertyName<Timestamp>("createdAt");
+    public static PropertyName<Date> createdAt() {
+        return new PropertyName<Date>("createdAt");
     }
 
     /**
      * userのプロパティ名を返します。
-     * 
+     *
      * @return userのプロパティ名
      */
     public static _UserNames user() {
         return new _UserNames("user");
+    }
+
+    /**
+     * nameMstのプロパティ名を返します。
+     *
+     * @return nameMstのプロパティ名
+     */
+    public static _NameMstNames nameMst() {
+        return new _NameMstNames("nameMst");
     }
 
     /**
@@ -88,7 +101,7 @@ public class BillboardNames {
 
         /**
          * インスタンスを構築します。
-         * 
+         *
          * @param name
          *            名前
          */
@@ -98,7 +111,7 @@ public class BillboardNames {
 
         /**
          * インスタンスを構築します。
-         * 
+         *
          * @param parent
          *            親
          * @param name
@@ -145,12 +158,12 @@ public class BillboardNames {
         }
 
         /**
-         * userIdのプロパティ名を返します。
+         * user_idのプロパティ名を返します。
          *
-         * @return userIdのプロパティ名
+         * @return user_idのプロパティ名
          */
-        public PropertyName<Integer> userId() {
-            return new PropertyName<Integer>(this, "userId");
+        public PropertyName<Integer> user_id() {
+            return new PropertyName<Integer>(this, "user_id");
         }
 
         /**
@@ -158,17 +171,26 @@ public class BillboardNames {
          *
          * @return createdAtのプロパティ名
          */
-        public PropertyName<Timestamp> createdAt() {
-            return new PropertyName<Timestamp>(this, "createdAt");
+        public PropertyName<Date> createdAt() {
+            return new PropertyName<Date>(this, "createdAt");
         }
 
         /**
          * userのプロパティ名を返します。
-         * 
+         *
          * @return userのプロパティ名
          */
         public _UserNames user() {
             return new _UserNames(this, "user");
+        }
+
+        /**
+         * nameMstのプロパティ名を返します。
+         *
+         * @return nameMstのプロパティ名
+         */
+        public _NameMstNames nameMst() {
+            return new _NameMstNames(this, "nameMst");
         }
     }
 }

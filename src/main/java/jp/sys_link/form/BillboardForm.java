@@ -20,9 +20,11 @@ public class BillboardForm {
 
 	private String createdAt = "";
 
-	public FormFile formFile;
+	private String fileName;
 
-	public FormFile[] formFiles;
+	private byte[] file;
+
+	public FormFile formFile;
 
 	/**
 	 * idを取得します。
@@ -118,6 +120,54 @@ public class BillboardForm {
 	 */
 	public void setCreatedAt(String createdAt) {
 	    this.createdAt = createdAt;
+	}
+
+	/**
+	 * fileNameを取得します。
+	 * @return fileName
+	 */
+	public String getFileName() {
+	    return fileName;
+	}
+
+	/**
+	 * fileNameを設定します。
+	 * @param fileName fileName
+	 */
+	public void setFileName(String fileName) {
+	    this.fileName = fileName;
+	}
+
+	/**
+	 * fileを取得します。
+	 * @return file
+	 */
+	public byte[] getFile() {
+	    return file;
+	}
+
+	/**
+	 * fileを設定します。
+	 * @param file file
+	 */
+	public void setFile(byte[] file) {
+	    this.file = file;
+	}
+
+	/**
+	 * formFileを取得します。
+	 * @return formFile
+	 */
+	public FormFile getFormFile() {
+	    return formFile;
+	}
+
+	/**
+	 * formFileを設定します。
+	 * @param formFile formFile
+	 */
+	public void setFormFile(FormFile formFile) {
+	    this.formFile = formFile;
 	}
 
 }

@@ -177,6 +177,12 @@ static {
         out.write("\t\t\t<div class=\"report\">");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(billboardItem.user.name)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_2, false));
         out.write("</div>\n");
+        out.write("\t\t\t<div class=\"mid_title\">添付ファイル</div>\n");
+        out.write("\t\t\t<div class=\"report\">\n");
+        out.write("\t\t\t\t<input type=\"submit\" name=\"download\" value=\"");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${billboardItem.fileName}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write("\" />\n");
+        out.write("\t\t\t</div>\n");
         out.write("\n");
         out.write("\t\t\t<hr size=\"1\" />\n");
         out.write("\t\t\t<div align=\"center\">\n");

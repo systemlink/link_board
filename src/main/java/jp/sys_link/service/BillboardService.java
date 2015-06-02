@@ -24,7 +24,7 @@ public class BillboardService extends AbstractService<Billboard> {
 				.innerJoin("nameMst").orderBy("id").getResultList();
 	}
 
-	public Billboard makeBIllboardEntityMaxId(){
+	public Billboard makeBillboardEntityMaxId(){
 		final String SQL = "select * from billboard where id = (select max(id) from billboard)";
 		return jdbcManager
 				.selectBySql(Billboard.class, SQL).getSingleResult();
