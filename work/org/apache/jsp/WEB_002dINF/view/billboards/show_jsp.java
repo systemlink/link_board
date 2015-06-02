@@ -29,6 +29,9 @@ static {
   }
 
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005flink_0026_005fhref;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005fif_0026_005ftest;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fform;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fhtml_005fhidden_0026_005fproperty_005fnobody;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
@@ -39,12 +42,18 @@ static {
 
   public void _jspInit() {
     _005fjspx_005ftagPool_005fs_005flink_0026_005fhref = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fc_005fif_0026_005ftest = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fs_005fform = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fhtml_005fhidden_0026_005fproperty_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
 
   public void _jspDestroy() {
     _005fjspx_005ftagPool_005fs_005flink_0026_005fhref.release();
+    _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.release();
+    _005fjspx_005ftagPool_005fs_005fform.release();
+    _005fjspx_005ftagPool_005fhtml_005fhidden_0026_005fproperty_005fnobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -103,6 +112,15 @@ static {
         return;
       out.write("\n");
       out.write("\t\t</div>\n");
+      out.write("\n");
+      out.write("\t\t<div class=\"mid_title\">添付ファイル</div>\n");
+      out.write("\n");
+      out.write("\t\t<!-- アップロードした添付ファイルがある場合のみ、submitボタンを表示します。 -->\n");
+      out.write("\t\t");
+      if (_jspx_meth_c_005fif_005f0(_jspx_page_context))
+        return;
+      out.write("\n");
+      out.write("\t\t<br>\n");
       out.write("\n");
       out.write("\t\t<div class=\"mid_title\">タイトル</div>\n");
       out.write("\t\t<div class=\"report\">");
@@ -190,6 +208,91 @@ static {
     return false;
   }
 
+  private boolean _jspx_meth_c_005fif_005f0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_005fif_005f0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_005fif_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_c_005fif_005f0.setParent(null);
+    // /WEB-INF/view/billboards/show.jsp(26,2) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fif_005f0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${billboardItems.fileName != null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
+    int _jspx_eval_c_005fif_005f0 = _jspx_th_c_005fif_005f0.doStartTag();
+    if (_jspx_eval_c_005fif_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("\t\t\t");
+        if (_jspx_meth_s_005fform_005f0(_jspx_th_c_005fif_005f0, _jspx_page_context))
+          return true;
+        out.write('\n');
+        out.write('	');
+        out.write('	');
+        int evalDoAfterBody = _jspx_th_c_005fif_005f0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_005fif_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.reuse(_jspx_th_c_005fif_005f0);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.reuse(_jspx_th_c_005fif_005f0);
+    return false;
+  }
+
+  private boolean _jspx_meth_s_005fform_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fif_005f0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  s:form
+    org.seasar.struts.taglib.S2FormTag _jspx_th_s_005fform_005f0 = (org.seasar.struts.taglib.S2FormTag) _005fjspx_005ftagPool_005fs_005fform.get(org.seasar.struts.taglib.S2FormTag.class);
+    _jspx_th_s_005fform_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_s_005fform_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fif_005f0);
+    int _jspx_eval_s_005fform_005f0 = _jspx_th_s_005fform_005f0.doStartTag();
+    if (_jspx_eval_s_005fform_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("\t\t\t\t");
+        if (_jspx_meth_html_005fhidden_005f0(_jspx_th_s_005fform_005f0, _jspx_page_context))
+          return true;
+        out.write("\n");
+        out.write("\t\t\t\t<input type=\"submit\" name=\"download\" value=\" ");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${billboardItems.fileName}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write("\" />\n");
+        out.write("\t\t\t");
+        int evalDoAfterBody = _jspx_th_s_005fform_005f0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_s_005fform_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fs_005fform.reuse(_jspx_th_s_005fform_005f0);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fs_005fform.reuse(_jspx_th_s_005fform_005f0);
+    return false;
+  }
+
+  private boolean _jspx_meth_html_005fhidden_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fform_005f0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  html:hidden
+    org.apache.struts.taglib.html.HiddenTag _jspx_th_html_005fhidden_005f0 = (org.apache.struts.taglib.html.HiddenTag) _005fjspx_005ftagPool_005fhtml_005fhidden_0026_005fproperty_005fnobody.get(org.apache.struts.taglib.html.HiddenTag.class);
+    _jspx_th_html_005fhidden_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_html_005fhidden_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
+    // /WEB-INF/view/billboards/show.jsp(28,4) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_html_005fhidden_005f0.setProperty("id");
+    int _jspx_eval_html_005fhidden_005f0 = _jspx_th_html_005fhidden_005f0.doStartTag();
+    if (_jspx_th_html_005fhidden_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fhtml_005fhidden_0026_005fproperty_005fnobody.reuse(_jspx_th_html_005fhidden_005f0);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fhtml_005fhidden_0026_005fproperty_005fnobody.reuse(_jspx_th_html_005fhidden_005f0);
+    return false;
+  }
+
   private boolean _jspx_meth_s_005flink_005f1(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -198,7 +301,7 @@ static {
     org.seasar.struts.taglib.S2LinkTag _jspx_th_s_005flink_005f1 = (org.seasar.struts.taglib.S2LinkTag) _005fjspx_005ftagPool_005fs_005flink_0026_005fhref.get(org.seasar.struts.taglib.S2LinkTag.class);
     _jspx_th_s_005flink_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005flink_005f1.setParent(null);
-    // /WEB-INF/view/billboards/show.jsp(37,3) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboards/show.jsp(48,3) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005flink_005f1.setHref((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("edit/${id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_s_005flink_005f1 = _jspx_th_s_005flink_005f1.doStartTag();
     if (_jspx_eval_s_005flink_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -235,7 +338,7 @@ static {
     org.seasar.struts.taglib.S2LinkTag _jspx_th_s_005flink_005f2 = (org.seasar.struts.taglib.S2LinkTag) _005fjspx_005ftagPool_005fs_005flink_0026_005fhref.get(org.seasar.struts.taglib.S2LinkTag.class);
     _jspx_th_s_005flink_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005flink_005f2.setParent(null);
-    // /WEB-INF/view/billboards/show.jsp(41,3) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/billboards/show.jsp(52,3) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005flink_005f2.setHref("/billboards/");
     int _jspx_eval_s_005flink_005f2 = _jspx_th_s_005flink_005f2.doStartTag();
     if (_jspx_eval_s_005flink_005f2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {

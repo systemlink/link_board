@@ -8,6 +8,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import jp.sys_link.entity.Billboards;
 import jp.sys_link.entity.NameMst;
@@ -21,6 +22,7 @@ import org.seasar.extension.jdbc.JdbcManager;
 import org.seasar.framework.beans.util.Beans;
 import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
+import org.seasar.struts.util.ResponseUtil;
 import org.seasar.struts.util.UploadUtil;
 
 public class BillboardsAction {
@@ -44,6 +46,9 @@ public class BillboardsAction {
 
 	@Resource
 	private HttpServletRequest request;
+
+	@Resource
+	protected HttpServletResponse response;
 
 	@Resource
 	private ServletContext application;
@@ -112,12 +117,18 @@ public class BillboardsAction {
 		return "/billboards/";
 	}
 
-	protected void upload(FormFile file) {
+	@Execute(validator = false)
+	public String download() {
+		billboardItems = billboardsService.findByShowId(billboardsForm.getId());
+		ResponseUtil.download(billboardItems.getFileName(),billboardItems.getFile());
+		return null;
+	}
+
+	private void upload(FormFile file) {
 
 		// TODO アップロードしたファイル情報をデータベースに格納
 		// アップロードされたかどうか、ファイルネームで判定
 		if (file.getFileName() != "") {
-
 			try {
 				InputStream is = file.getInputStream();
 				billboardsForm.setFile(IOUtils.toByteArray(is));

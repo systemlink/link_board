@@ -20,6 +20,17 @@
 			</s:link>
 		</div>
 
+		<div class="mid_title">添付ファイル</div>
+
+		<!-- アップロードした添付ファイルがある場合のみ、submitボタンを表示します。 -->
+		<c:if test="${billboardItems.fileName != null}">
+			<s:form>
+				<html:hidden property="id" />
+				<input type="submit" name="download" value=" ${billboardItems.fileName}" />
+			</s:form>
+		</c:if>
+		<br>
+
 		<div class="mid_title">タイトル</div>
 		<div class="report">${f:h(billboardItems.title)}</div>
 
