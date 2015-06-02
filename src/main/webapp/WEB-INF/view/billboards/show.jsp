@@ -23,7 +23,7 @@
 		<div class="mid_title">添付ファイル</div>
 
 		<!-- アップロードした添付ファイルがある場合のみ、submitボタンを表示します。 -->
-		<c:if test="${billboardItems.fileName != null}">
+		<c:if test="${billboardItems.file != null}">
 			<s:form>
 				<html:hidden property="id" />
 				<input type="submit" name="download" value=" ${billboardItems.fileName}" />
