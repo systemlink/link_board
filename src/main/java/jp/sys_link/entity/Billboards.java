@@ -1,7 +1,6 @@
 package jp.sys_link.entity;
 
 import java.sql.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -36,6 +34,12 @@ public class Billboards {
 	@Column(name = "created_at")
 	private Date createdAt;
 
+	@Column(name = "file_name")
+	private String fileName;
+
+	@Column
+	private byte[] file;
+
 	@ManyToOne
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	private User user;
@@ -43,9 +47,6 @@ public class Billboards {
 	@ManyToOne
 	@JoinColumn(name = "billboard_group_id", referencedColumnName = "id")
 	private NameMst nameMst;
-
-	@OneToMany(mappedBy = "billboards")
-	private List<Upfile> upfileList;
 
 	public Integer getId() {
 		return id;
@@ -111,11 +112,19 @@ public class Billboards {
 		this.nameMst = nameMst;
 	}
 
-	public List<Upfile> getUpfileList() {
-		return upfileList;
+	public String getFileName() {
+		return fileName;
 	}
 
-	public void setUpfileList(List<Upfile> upfileList) {
-		this.upfileList = upfileList;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public byte[] getFile() {
+		return file;
+	}
+
+	public void setFile(byte[] file) {
+		this.file = file;
 	}
 }
