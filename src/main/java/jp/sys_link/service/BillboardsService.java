@@ -4,6 +4,8 @@ import java.util.List;
 
 import jp.sys_link.entity.Billboards;
 
+import org.seasar.extension.jdbc.where.SimpleWhere;
+
 public class BillboardsService extends AbstractService<Billboards> {
 
 	public Billboards findByMaxId() {
@@ -19,5 +21,12 @@ public class BillboardsService extends AbstractService<Billboards> {
 	public Billboards findByShowId(String id) {
 		return jdbcManager.from(Billboards.class).innerJoin("user")
 				.innerJoin("nameMst").where("id = ?", id).getSingleResult();
+	}
+
+	public List<Billboards> findByTitle(String title) {
+		return jdbcManager.from(Billboards.class).innerJoin("user")
+				.innerJoin("nameMst")
+				.where(new SimpleWhere().contains("title", title))
+				.orderBy("id").getResultList();
 	}
 }

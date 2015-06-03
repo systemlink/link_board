@@ -120,8 +120,15 @@ public class BillboardsAction {
 	@Execute(validator = false)
 	public String download() {
 		billboardItems = billboardsService.findByShowId(billboardsForm.getId());
-		ResponseUtil.download(billboardItems.getFileName(),billboardItems.getFile());
+		ResponseUtil.download(billboardItems.getFileName(),
+				billboardItems.getFile());
 		return null;
+	}
+
+	@Execute(validator = false)
+	public String findByTitle() {
+		billboardsItems = billboardsService.findByTitle(billboardsForm.getTitle());
+		return "top.jsp";
 	}
 
 	private void upload(FormFile file) {

@@ -18,11 +18,22 @@
 		</header>
 
 		<div align="right">
-			<button type="submit">戻る</button>
+			<s:link href="/billboards">
+				<button type="submit">戻る</button>
+			</s:link>
 			<s:link href="create">
 				<button type="submit">新規作成</button>
 			</s:link>
 		</div>
+
+		<div>
+			<s:form>
+				 タイトル検索：
+				<input type="text" name="title">
+				<input type="submit" name="findByTitle" value="検索">
+			</s:form>
+		</div>
+		<br>
 
 		<table border=1>
 			<colgroup>
@@ -43,7 +54,8 @@
 			</thead>
 			<c:forEach var="e" varStatus="s" items="${billboardsItems}">
 
-	<tr style="background-color:${s.index %2 == 0 ? '#f9f9f9' : 'white'}">
+				<tr
+					style="background-color:${s.index %2 == 0 ? '#f9f9f9' : 'white'}">
 					<td>${f:h(e.createdAt)}</td>
 					<td>${f:h(e.nameMst.name)}</td>
 					<td>${f:h(e.title)}</td>
