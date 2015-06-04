@@ -29,4 +29,12 @@ public class BillboardsService extends AbstractService<Billboards> {
 				.where(new SimpleWhere().contains("title", title))
 				.orderBy("id").getResultList();
 	}
+
+	public List<Billboards> findByDate(String date) {
+		return jdbcManager.from(Billboards.class).innerJoin("user")
+			.innerJoin("nameMst")
+			// TODO createdAtがTimestamp型なので、日付部分のみで比較するようしています。
+			.where(" Date(createdAt) = ?", date )
+			.orderBy("id").getResultList();
+	}
 }

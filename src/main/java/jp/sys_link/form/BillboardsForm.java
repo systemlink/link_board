@@ -1,6 +1,7 @@
 package jp.sys_link.form;
 
 import org.apache.struts.upload.FormFile;
+import org.seasar.struts.annotation.DateType;
 import org.seasar.struts.annotation.Required;
 
 public class BillboardsForm {
@@ -18,6 +19,7 @@ public class BillboardsForm {
 
 	private String userId = "";
 
+	@DateType(datePattern = "yyyy-MM-dd")
 	private String createdAt = "";
 
 	private FormFile formFile;

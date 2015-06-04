@@ -31,6 +31,10 @@
 				 タイトル検索：
 				<input type="text" name="title">
 				<input type="submit" name="findByTitle" value="検索">
+
+				 日付検索：
+				<html:text property="createdAt" />
+				<input type="submit" name="findByDate" value="検索">
 			</s:form>
 		</div>
 		<br>

@@ -131,6 +131,12 @@ public class BillboardsAction {
 		return "top.jsp";
 	}
 
+	@Execute(validator = true, input="/billboards/")
+	public String findByDate() {
+		billboardsItems = billboardsService.findByDate(billboardsForm.getCreatedAt());
+		return "top.jsp";
+	}
+
 	private void upload(FormFile file) {
 
 		// TODO アップロードしたファイル情報をデータベースに格納
