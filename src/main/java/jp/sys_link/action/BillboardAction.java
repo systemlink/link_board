@@ -108,7 +108,7 @@ public class BillboardAction {
 		return "/billboard/";
 	}
 
-	@Execute(input = "edit.jsp", redirect = true)
+	@Execute(validator = true,input = "edit/{id}", redirect = true)
 	public String update() {
 		billboardForm.setUser_id("1");
 		Billboard entity = Beans.createAndCopy(Billboard.class, billboardForm)
@@ -149,4 +149,15 @@ public class BillboardAction {
 		return null;
 	}
 
+	@Execute(input = "index",validator = true)
+	public String searchTitle(){
+		billboardItems = billboardService.SearchTitle(billboardForm.getTitle());
+		return "list.jsp";
+	}
+
+	@Execute(input = "index",validator = true)
+	public String searchDate(){
+		billboardItems = billboardService.SearchDate(billboardForm.getCreatedAt());
+		return "list.jsp";
+	}
 }

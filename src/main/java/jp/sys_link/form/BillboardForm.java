@@ -1,23 +1,25 @@
 package jp.sys_link.form;
 
 import org.apache.struts.upload.FormFile;
+import org.seasar.struts.annotation.DateType;
 import org.seasar.struts.annotation.Required;
 
 public class BillboardForm {
 
 	private String id = "";
 
-	@Required
+	@Required(target = "insert,update")
 	private String title = "";
 
-	@Required
+	@Required(target = "insert,update")
 	private String note = "";
 
-	@Required
+	@Required(target = "insert,update")
 	private String billboardGroupId = "";
 
 	private String user_id = "";
 
+	@DateType(datePattern = "yyyy-MM-dd",target = "searchDate")
 	private String createdAt = "";
 
 	private String fileName;

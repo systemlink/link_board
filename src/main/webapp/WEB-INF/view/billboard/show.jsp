@@ -26,9 +26,11 @@
 			<div class="mid_title">作成者</div>
 			<div class="report">${f:h(billboardItem.user.name)}</div>
 			<div class="mid_title">添付ファイル</div>
+			<c:if test="${billboardItem.fileName != null}">
 			<div class="report">
-				<input type="submit" name="download" value="${billboardItem.fileName}" />
+				<html:submit property="download" value="${billboardItem.fileName}" />
 			</div>
+			</c:if>
 
 			<hr size="1" />
 			<div align="center">

@@ -10,12 +10,24 @@
 	<div id="main" class="container">
 		<h3 align="center">掲示板</h3>
 		<hr size="4" />
+
 		<div align="right">
 			<s:form>
-				<input type="submit" name="index" value="戻る" />
-				<input type="submit" name="create" value="新規作成" />
+			<input type="submit" name="index" value="戻る" />
+			<input type="submit" name="create" value="新規作成" />
 			</s:form>
 		</div>
+
+		<div align="center">
+			<s:form>
+			タイトル：<html:text property="title" maxlength="30" />
+			<input type = "submit" name="searchTitle" value="検索" />
+			日付：<html:text property="createdAt"/>
+			<input type = "submit" name="searchDate" value="検索" />
+			(記入例：2015-01-01)
+			</s:form>
+		</div><br/>
+
 		<table border="1" cellspacing="0" cellpadding="5">
 			<colgroup>
 				<col width="100px" />

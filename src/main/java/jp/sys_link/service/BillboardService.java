@@ -6,6 +6,8 @@ import javax.annotation.Generated;
 
 import jp.sys_link.entity.Billboard;
 
+import org.seasar.extension.jdbc.where.SimpleWhere;
+
 /**
  * {@link Billboard}のサービスクラスです。
  *
@@ -16,7 +18,7 @@ public class BillboardService extends AbstractService<Billboard> {
 	public Billboard makeBillboardItem(String id){
 		return jdbcManager.from(Billboard.class).innerJoin("user")
 				.innerJoin("nameMst").where("id = ?", id)
-				.getSingleResult();
+				.orderBy("id").getSingleResult();
 	}
 
 	public List<Billboard> makeBillboardItems(){
@@ -24,10 +26,15 @@ public class BillboardService extends AbstractService<Billboard> {
 				.innerJoin("nameMst").orderBy("id").getResultList();
 	}
 
-	public Billboard makeBillboardEntityMaxId(){
-		final String SQL = "select * from billboard where id = (select max(id) from billboard)";
-		return jdbcManager
-				.selectBySql(Billboard.class, SQL).getSingleResult();
+	public List<Billboard> SearchTitle(String title){
+		return jdbcManager.from(Billboard.class).innerJoin("user")
+				.innerJoin("nameMst").where(new SimpleWhere().contains("title",title))
+				.orderBy("id").getResultList();
 	}
 
+	public List<Billboard> SearchDate(String createdAt){
+		return jdbcManager.from(Billboard.class).innerJoin("user")
+				.innerJoin("nameMst").where("Date(createdAt) = ?",createdAt)
+				.orderBy("id").getResultList();
+	}
 }
